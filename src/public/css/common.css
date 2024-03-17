@@ -1,0 +1,55 @@
+.app-header{
+    display: flex;
+    background-color: black;
+}
+
+.header-logo{
+    width: 27%;
+    padding: 15px 20px;
+}
+
+.header-logo_image{
+    width: 100%;
+}
+
+.content-nav {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-left: 20px;
+}
+
+.search-form_wrapper{
+    display: flex;
+    width: 50%;
+}
+
+.search-form{
+    display: flex;
+    width: 100%;
+}
+
+.search-form_item{
+    width: 100%;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+}
+
+.menu-nav{
+    margin-left: 70px;
+}
+
+.menu-nav_link{
+    margin-right: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+}
+
+.menu-nav_link-sell{
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+}
