@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     public function profile(){
-        return $this->belongsTo('App/Models/Profile');
+        return $this->hasOne('App/Models/Profile');
     }
 
     public function items(){
