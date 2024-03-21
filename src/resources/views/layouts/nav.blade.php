@@ -22,7 +22,6 @@
                 <form class="search-form" action="/search" method="post">
                     @csrf
                     <input class="search-form_item" name="keyword" type="text" placeholder="なにをお探しですか？">
-                    <button class="search-form_item-button"></button>
                 </form>
             </div>
             @if(Auth::check())
@@ -31,7 +30,7 @@
                     @csrf
                     <button class="menu-nav_link logout-form_button">ログアウト</button>
                 </form>
-                <a href="/" class="menu-nav_link">マイページ</a>
+                <a href="/mypage" class="menu-nav_link">マイページ</a>
                 <a href="/sell" class="menu-nav_link menu-nav_link-sell">出品</a>
             </nav>
             @else
