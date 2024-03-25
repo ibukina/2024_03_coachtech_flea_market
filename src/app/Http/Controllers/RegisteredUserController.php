@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
@@ -12,7 +13,7 @@ class RegisteredUserController extends Controller
         return view('register');
     }
 
-    public function create(Request $request){
+    public function create(RegisterRequest $request){
         $user=User::create([
             'name' => "new user",
             'email' => $request['email'],
