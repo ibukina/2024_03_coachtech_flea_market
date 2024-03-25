@@ -7,7 +7,7 @@
 @section('main_content')
 <div class="content-detail">
     <div class="item-image_wrapper">
-        <img class="item-image" src="" alt="商品画像">
+        <div class="item-image">商品画像</div>
     </div>
     <div class="item-detail_wrapper">
         <h2 class="item-name">商品名</h2>
@@ -15,20 +15,16 @@
         <div class="price">¥47,000(値段)</div>
         <div class="mark-container">
             <div class="mark-wrapper">
-                <form  class="like-form" action="" method="">
+                <form class="like-form" action="" method="">
                     @csrf
-                    <button class="like-button">
-                        <span class="like-button_image"></span>
-                    </button>
+                    <button class="like-button"></button>
                 </form>
                 <div class="mark-number">3</div>
             </div>
             <div class="mark-wrapper">
-                <form class="comment-form" action="">
+                <form class="comment-form" action="" method="">
                     @csrf
-                    <button class="comment-button">
-                        <span class="comment-button_image"></span>
-                    </button>
+                    <button class="comment-button"></button>
                 </form>
                 <div class="mark-number">14</div>
             </div>
@@ -49,9 +45,9 @@
             <div class="category-tag">洋服</div>
             <div class="category-tag">メンズ</div>
         </div>
-        <div class="situation-wrapper">
-            <div class="situation-title">商品の状態</div>
-            <div class="situation-tag">良好</div>
+        <div class="condition-wrapper">
+            <div class="condition-title">商品の状態</div>
+            <div class="condition-tag">良好</div>
         </div>
     </div>
 </div>
