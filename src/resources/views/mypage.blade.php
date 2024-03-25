@@ -1,0 +1,27 @@
+@extends('layouts.nav')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+@endsection
+
+@section('main_content')
+<div class="content-mypage">
+    <div class="user-info_wrapper">
+        <div class="user-info">
+            <img class="user-icon" src="" alt="">
+            <div class="user-name">ユーザー名</div>
+        </div>
+        <a class="profile-link" href="/mypage/profile">プロフィールを編集</a>
+    </div>
+    <div class="content-mypage_tag-wrapper">
+        <button class="content-mypage_tag sell-item_tag">出品した商品</button>
+        <button class="content-mypage_tag purchase-item_tag">購入した商品</button>
+    </div>
+    <div class="item-wrapper">
+        <form class="detail-form" action="/item/item_id" method="get">
+            @csrf
+            <button class="detail-form_button"></button>
+        </form>
+    </div>
+</div>
+@endsection
