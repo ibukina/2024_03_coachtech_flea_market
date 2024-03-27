@@ -7,20 +7,30 @@
 @section('main_content')
 <div class="content-comment">
     <div class="item-image_wrapper">
-        <img class="item-image" src="" alt="商品画像">
+        <div class="item-image">
+            <img class="item-image_image" src="" alt="商品画像">
+        </div>
     </div>
     <div class="item-comment_wrapper">
         <div class="item-wrapper">
             <h2 class="item-name">商品名</h2>
-            <p class="item-brand">ブランド名</p>
-            <p class="item-price">¥47,000(値段)</p>
-            <div class="mark-form_wrapper">
+            <div class="item-brand">ブランド名</div>
+            <div class="item-price">¥47,000(値段)</div>
+            <div class="mark-container">
                 <div class="mark-wrapper">
-                    <div class="mark-image"></div>
+                    <form class="like-form" action="" method="">
+                        @csrf
+                        <input type="hidden" name="item_id" value="">
+                        <button class="like-button"></button>
+                    </form>
                     <div class="mark-number">3</div>
                 </div>
                 <div class="mark-wrapper">
-                    <div class="mark-image"></div>
+                    <form class="comment-form_link" action="/item/comment/item_id" method="get">
+                        @csrf
+                        <input type="hidden" name="item_id" value="">
+                        <button class="comment-button"></button>
+                    </form>
                     <div class="mark-number">14</div>
                 </div>
             </div>
@@ -29,18 +39,32 @@
             <div class="comment-wrapper">
                 <div class="comment-user_wrapper">
                     <img class="user-icon" src="" alt="">
-                    <div class="user-name"></div>
+                    <div class="user-name">名前</div>
+                </div>
+                <div class="user-comment"></div>
+            </div>
+            <div class="comment-wrapper">
+                <div class="comment-user_wrapper">
+                    <img class="user-icon" src="" alt="">
+                    <div class="user-name">名前</div>
+                </div>
+                <div class="user-comment"></div>
+            </div>
+            <div class="comment-wrapper">
+                <div class="comment-user_wrapper">
+                    <img class="user-icon" src="" alt="">
+                    <div class="user-name">名前</div>
                 </div>
                 <div class="user-comment"></div>
             </div>
         </div>
         <form class="comment-form" action="">
             @csrf
-            <label class="form-item_wrapper">
-                <p class="form_item-name">商品へのコメント</p>
-                <input class="form-item_input" name="comment" type="text">
+            <label class="comment-form_item-wrapper">
+                <p class="comment-form_item-name">商品へのコメント</p>
+                <textarea class="comment-form_item-text" name="comment"></textarea>
             </label>
-            <button class="form-button">コメントを送信する</button>
+            <button class="comment-form_button">コメントを送信する</button>
         </form>
     </div>
 </div>

@@ -29,6 +29,7 @@ Route::post('/login', [AuthenticatedSessionController::class, 'create']);
 
 Route::group(['middleware'=>['auth']], function (){
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
+    Route::get('/item/comment/item_id', [CommentController::class, 'index']);
     Route::post('/item/comment/item_id', [CommentController::class, 'create']);
     Route::post('/item/like/item_id', [LikeController::class, 'create']);
     Route::post('/item/unlike/item_id', [LikeController::class, 'destroy']);
