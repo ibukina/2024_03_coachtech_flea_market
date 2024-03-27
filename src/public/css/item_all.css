@@ -27,13 +27,14 @@
 
 .item-wrapper{
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    padding: 40px;
+    padding: 40px 50px;
 }
 
 .detail-form_button{
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
+    margin: 0 25px 70px 25px;
     border: none;
+    background-color: #D9D9D9;
 }
