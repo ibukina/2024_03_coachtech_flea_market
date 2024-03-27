@@ -10,7 +10,7 @@ class Condition extends Model
     use HasFactory;
 
     public function items(){
-        return $this->hasMany('App/Models/Item');
+        return $this->hasMany('App\Models\Item');
     }
 
     protected $fillable=[

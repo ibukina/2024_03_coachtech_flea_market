@@ -10,11 +10,11 @@ class CategoryItem extends Model
     use HasFactory;
 
     public function item(){
-        return $this->belongsTo('App/Models/Item');
+        return $this->belongsTo('App\Models\Item');
     }
 
     public function category(){
-        return $this->belongsTo('App/Models/Category');
+        return $this->belongsTo('App\Models\Category');
     }
 
     protected $fillable=[

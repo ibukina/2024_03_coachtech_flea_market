@@ -10,11 +10,11 @@ class Comment extends Model
     use HasFactory;
 
     public function user(){
-        return $this->belongsTo('App/Models/User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function item(){
-        return $this->belongsTo('App/Models/Item');
+        return $this->belongsTo('App\Models\Item');
     }
 
     protected $fillable=[

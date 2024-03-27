@@ -13,23 +13,23 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     public function profile(){
-        return $this->hasOne('App/Models/Profile');
+        return $this->hasOne('App\Models\Profile');
     }
 
     public function items(){
-        return $this->hasMany('App/Models/Item');
+        return $this->hasMany('App\Models\Item');
     }
 
     public function likes(){
-        return $this->hasMany('App/Models/Like');
+        return $this->hasMany('App\Models\Like');
     }
 
     public function sold_items(){
-        return $this->hasMany('App/Models/SoldItem');
+        return $this->hasMany('App\Models\SoldItem');
     }
 
     public function comments(){
-        return $this->hasMany('App/Models/Comment');
+        return $this->hasMany('App\Models\Comment');
     }
 
     /**
