@@ -1,0 +1,163 @@
+.content-comment {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 12%;
+}
+
+.item-image_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    margin-top: 30px;
+}
+
+.item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 400px;
+    background-color: #D9D9D9;
+    font-size: 30px;
+}
+
+.item-image_image {
+    display: flex;
+    width: 100%;
+}
+
+.item-comment_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+}
+
+.item-name {
+    margin-bottom: -5px;
+    font-size: 30px;
+}
+
+.item-brand {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.item-price {
+    margin: 2px 0;
+    font-size: 20px;
+}
+
+.mark-container {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    margin: 10px 0;
+}
+
+.like-form {
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/like.png);
+    background-size: cover;
+}
+
+.comment-form_link {
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/comment.png);
+    background-size: cover;
+}
+
+.like-button,
+.comment-button {
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: none;
+}
+
+.mark-number {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin-top: 50px;
+}
+
+.comment-wrapper{
+    margin-bottom: 10px;
+}
+
+.comment-user_wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.user-icon{
+    width: 22px;
+    height: 22px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+.user-name{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-comment{
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #D9D9D9;
+    font-size: 14px;
+}
+
+.comment-form{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.comment-form_item-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form_item-name{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.comment-form_item-text{
+    width: 100%;
+    height: 120px;
+    border: 1px solid #5F5F5F;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.comment-form_button{
+    width: 100%;
+    height: 36px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: #FF5555;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}

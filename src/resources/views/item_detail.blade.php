@@ -8,7 +8,7 @@
 <div class="content-detail">
     <div class="item-image_wrapper">
         <div class="item-image">
-            <img src="" alt="商品画像">
+            <img class="item-image_image" src="{{ asset('') }}" alt="商品画像">
         </div>
     </div>
     <div class="item-detail_wrapper">
@@ -26,7 +26,7 @@
                     <div class="mark-number">3</div>
                 </div>
                 <div class="mark-wrapper">
-                    <form class="comment-form" action="" method="">
+                    <form class="comment-form" action="/item/comment/item_id" method="get">
                         @csrf
                         <input type="hidden" name="item_id" value="">
                         <button class="comment-button"></button>

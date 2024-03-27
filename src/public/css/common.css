@@ -1,5 +1,6 @@
 .app-header{
     display: flex;
+    height: 50px;
     background-color: black;
 }
 
@@ -38,12 +39,12 @@
 
 .menu-nav{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    margin-left: 50px;
 }
 
 .menu-nav_link{
-    margin-right: 25px;
+    margin-left: 25px;
     text-decoration: none;
     font-size: 16px;
     color: white;
