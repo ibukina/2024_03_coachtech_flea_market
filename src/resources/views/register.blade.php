@@ -10,13 +10,14 @@
         <div class="register-form_title">会員登録</div>
         <form class="register-form" action="/register" method="post">
             @csrf
+            <input type="hidden" name="name" value="new user">
             <label class="register-form_item">
                 <div class="register-form_item-name">メールアドレス</div>
-                <input type="email" name="email" class="register-form_item-input">
+                <input class="register-form_item-input" type="email" name="email">
             </label>
             <label class="register-form_item">
                 <div class="register-form_item-name">パスワード</div>
-                <input type="password" name="password" class="register-form_item-input">
+                <input class="register-form_item-input" type="password" name="password">
             </label>
             <label class="register-form_item">
                 <button class="register-form_item-button">登録する</button>

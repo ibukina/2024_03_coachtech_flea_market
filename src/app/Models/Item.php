@@ -10,23 +10,23 @@ class Item extends Model
     use HasFactory;
 
     public function user(){
-        return $this->belongsTo('App/Models/User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function condition(){
-        return $this->belongsTo('App/Models/Condition');
+        return $this->belongsTo('App\Models\Condition');
     }
 
     public function category_items(){
-        return $this->hasMany('App/Models/CategoryItem');
+        return $this->hasMany('App\Models\CategoryItem');
     }
 
     public function likes(){
-        return $this->hasMany('App/Models/Like');
+        return $this->hasMany('App\Models\Like');
     }
 
     public function sold_items(){
-        return $this->hasMany('App/Models/SoldItem');
+        return $this->hasMany('App\Models\SoldItem');
     }
 
     public function comments(){
