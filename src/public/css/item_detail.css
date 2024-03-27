@@ -1,0 +1,146 @@
+.content-detail{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 12%;
+}
+
+.item-image_wrapper{
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    margin-top: 30px;
+}
+
+.item-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 400px;
+    background-image: url();
+    background-size: cover;
+    background-color: #D9D9D9;
+    font-size: 30px;
+}
+
+.item-detail_wrapper{
+    display: flex;
+    justify-content: center;
+    width: 320px;
+}
+
+.item-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+}
+
+.item-name{
+    margin-bottom: -5px;
+    font-size: 30px;
+}
+
+.item-brand{
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.item-price{
+    margin: 2px 0;
+    font-size: 20px;
+}
+
+.mark-container{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    margin: 10px 0;
+}
+
+.like-form{
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/like.png);
+    background-size: cover;
+}
+
+.comment-form{
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/comment.png);
+    background-size: cover;
+}
+
+.like-button, .comment-button{
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: none;
+}
+
+.mark-number{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.purchase-form{
+    width: 100%;
+}
+
+.purchase-button{
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 3px;
+    background-color: #FF5555;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.description-title{
+    margin-bottom: 0;
+    font-size: 23px;
+}
+
+.item-color, .item-description{
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.information-title {
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-size: 23px;
+}
+
+.category-wrapper, .condition-wrapper{
+    display: flex;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.category-title, .condition-title{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.category-tag{
+    text-align: center;
+    width: 60px;
+    height: 18px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+.condition-tag{
+    text-align: center;
+    width: 60px;
+    height: 18px;
+    margin: 0 10px;
+}

@@ -11,10 +11,12 @@
         <button class="content-item_tag mylist-button">マイリスト</button>
     </div>
     <div class="item-wrapper">
+        @for ($i = 0; $i < 10; $i++)
         <form class="detail-form" action="/item/item_id" method="get">
             @csrf
             <button class="detail-form_button"></button>
         </form>
+        @endfor
     </div>
 </div>
 @endsection
