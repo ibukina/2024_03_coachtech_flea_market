@@ -18,7 +18,7 @@
             <div class="item-price">¥47,000(値段)</div>
             <div class="mark-container">
                 <div class="mark-wrapper">
-                    <form class="like-form" action="" method="">
+                    <form class="like-form" action="/item/comment/item_id" method="post">
                         @csrf
                         <input type="hidden" name="item_id" value="">
                         <button class="like-button"></button>
