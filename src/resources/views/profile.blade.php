@@ -11,23 +11,26 @@
         @csrf
         <div class="user-icon_wrapper">
             <img class="user-icon" src="" alt="">
-            <input class="form-item_file" name="img" type="file">
+            <label class="profile-form_item-file_wrapper" for="img_url">
+                画像を選択する
+                <input class="profile-form_item-file" name="img" type="file" id="img_url">
+            </label>
         </div>
-        <label class="form-item_wrapper">
-            <p class="form-item_name">ユーザー名</p>
-            <input class="form-item_input" name="name" type="text">
+        <label class="profile-form_item-wrapper">
+            <p class="profile-form_item-name">ユーザー名</p>
+            <input class="profile-form_item-input" name="name" type="text">
         </label>
-        <label class="form-item_wrapper">
-            <p class="form-item_name">郵便番号</p>
-            <input class="form-item_input" name="postcode" type="text">
+        <label class="profile-form_item-wrapper">
+            <p class="profile-form_item-name">郵便番号</p>
+            <input class="profile-form_item-input" name="postcode" type="postcode">
         </label>
-        <label class="form-item_wrapper">
-            <p class="form-item_name">住所</p>
-            <input class="form-item_input" name="address" type="text">
+        <label class="profile-form_item-wrapper">
+            <p class="profile-form_item-name">住所</p>
+            <input class="profile-form_item-input" name="address" type="address">
         </label>
-        <label class="form-item_wrapper">
-            <p class="form-item_name">建物名</p>
-            <input class="form-item_input" name="building" type="text">
+        <label class="profile-form_item-wrapper">
+            <p class="profile-form_item-name">建物名</p>
+            <input class="profile-form_item-input" name="building" type="text">
         </label>
         <button class="profile-update_button">更新する</button>
     </form>
