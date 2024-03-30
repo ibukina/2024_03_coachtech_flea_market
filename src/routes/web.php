@@ -22,6 +22,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [ItemController::class, 'index']);
 Route::get('/item/item_id', [ItemController::class, 'detail']);
+Route::post('/item/search', [ItemController::class, 'search']);
 Route::get('/register', [RegisteredUserController::class, 'index']);
 Route::post('/register', [RegisteredUserController::class, 'create']);
 Route::get('/login', [AuthenticatedSessionController::class, 'index'])->name('login');

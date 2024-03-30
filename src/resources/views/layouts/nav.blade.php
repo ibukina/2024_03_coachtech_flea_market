@@ -19,7 +19,7 @@
         </div>
         <div class="content-nav">
             <div class="search-form_wrapper">
-                <form class="search-form" action="/search" method="post">
+                <form class="search-form" action="/item/search" method="post">
                     @csrf
                     <input class="search-form_item" name="keyword" type="text" placeholder="なにをお探しですか？">
                 </form>
