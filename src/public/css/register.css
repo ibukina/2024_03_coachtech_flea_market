@@ -63,3 +63,24 @@
     font-size: 12px;
     color: #0073CC;
 }
+
+.error-wrapper {
+    width: 100%;
+}
+
+.error-has {
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FF5555;
+}
+
+.error-message_wrapper {
+    padding: 15px;
+    background-color: #FF5555;
+}
+
+.error-message {
+    font-size: 18px;
+    color: white;
+}

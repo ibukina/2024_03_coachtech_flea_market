@@ -5,6 +5,16 @@
 @endsection
 
 @section('main_content')
+@if (count($errors) > 0)
+    <div class="error-has">
+        入力内容に問題があります
+    </div>
+    <div class="error-message_wrapper">
+        @foreach ($errors->all() as $error)
+        <li class="error-message">{{$error}}</li>
+        @endforeach
+    </div>
+@endif
 <div class="content-sell">
     <h2 class="page-title">商品の出品</h2>
     <form class="sell-form" action="/sell" method="post">
