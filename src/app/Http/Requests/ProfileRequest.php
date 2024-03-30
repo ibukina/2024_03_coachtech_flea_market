@@ -22,7 +22,7 @@ class ProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username'=>['required',],
+            'name'=>['required',],
             'postcode'=>['required', 'integer',],
             'address'=>['required',],
         ];
@@ -30,7 +30,7 @@ class ProfileRequest extends FormRequest
 
     public function messages(){
         return [
-            'username.required'=>'ユーザー名を入力してください',
+            'name.required'=>'ユーザー名を入力してください',
             'postcode.required'=>'郵便番号を入力してください',
             'postcode.integer'=>'郵便番号を数字で入力してください',
             'address.required'=>'住所を入力してください',

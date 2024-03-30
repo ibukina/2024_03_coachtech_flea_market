@@ -8,8 +8,8 @@
 <div class="content-mypage">
     <div class="user-info_wrapper">
         <div class="user-info">
-            <img class="user-icon" src="" alt="">
-            <div class="user-name">ユーザー名</div>
+            <img class="user-icon" src="{{ $user->img_url }}" alt="">
+            <div class="user-name">{{ $user->user->name }}</div>
         </div>
         <div class="profile-link_wrapper">
             <a class="profile-link" href="/mypage/profile">プロフィールを編集</a>

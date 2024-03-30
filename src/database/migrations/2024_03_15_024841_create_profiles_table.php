@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('img_url');
             $table->integer('postcode');
             $table->string('address');
-            $table->string('building');
+            $table->string('building')->nullable();
             $table->timestamps();
         });
     }
