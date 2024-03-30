@@ -9,6 +9,10 @@ use App\Models\Comment;
 
 class CommentController extends Controller
 {
+    public function index(){
+        return view('comment');
+    }
+
     public function create(CommentRequest $request, $item_id){
         $user_id=Auth::id();
         Comment::create([
