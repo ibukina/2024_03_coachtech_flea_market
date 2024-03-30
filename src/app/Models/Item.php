@@ -42,4 +42,11 @@ class Item extends Model
         'description',
         'img_url',
     ];
+
+    public function scopeKeywordSearch($query, $keyword){
+        if(!empty($keyword)){
+            $query->where('name', 'LIKE', '%' . "$keyword" . '%')
+            ->orWhere('description', 'LIKE', '%' . "$keyword" . '%');
+        }
+    }
 }

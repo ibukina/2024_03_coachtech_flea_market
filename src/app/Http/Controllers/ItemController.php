@@ -29,6 +29,11 @@ class ItemController extends Controller
         return view('item_detail');
     }
 
+    public function search(Request $request){
+        $item=Item::KeyWordSearch($request->keyword)->get();
+        return view('item_all');
+    }
+
     public function sellView(){
         return view('sell');
     }
