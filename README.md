@@ -2,6 +2,64 @@
 
 ## ページ一覧
 
+<details>
+<summary>未ログイン時ページ一覧</summary>
+
+### トップページ(商品一覧ページ)
+
+![flea_market_item_all](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/2f51b008-ac58-41b7-a6e8-1497161d84d1)
+
+### 商品詳細ページ
+
+![flea_market_item_detail](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/f2ac6368-5495-45fa-b0b4-27caf7b236ce)
+
+### 会員登録ページ
+
+![flea_market_register](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/707c2118-38d8-4e70-9ec8-7b0d4a87613f)
+
+### ログインページ
+
+![flea_market_login](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/ae88c086-b5a4-4859-b9cf-b445000d9132)
+
+</details>
+
+<details>
+<summary>済ログイン時ページ一覧</summary>
+
+### トップページ(商品一覧ページ)
+
+![flea_market_item_all_logined](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/c4496a33-9820-4efc-b258-536bc8f8bda9)
+
+### 商品詳細ページ
+
+![flea_market_item_detail_logined](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/db529c78-f935-4a4b-9962-948e5a7241c0)
+
+### 出品ページ
+
+![flea_market_sell](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/be18034e-724f-4b24-b2cc-61cac4927f55)
+
+### コメントページ
+
+![flea_market_comment](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/539a2b21-ec4c-4bc8-9525-a39fcd494778)
+
+### 購入ページ
+
+![flea_market_purchase](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/96a43de8-670a-4955-b08a-15b6976a95b7)
+
+### 住所変更ページ
+
+![flea_market_address](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/2feab580-02bd-4082-bef4-3121b7b0c3d9)
+
+### マイページ
+
+![flea_market_mypage](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/b9d81089-d7f2-4096-8b96-17bf50ed7f74)
+
+### プロフィール編集ページ
+
+![flea_market_profile](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/dec2ad36-6d8b-4673-ad5a-a88d97331ffb)
+
+</details>
+
 ## 作成した目的
 
 ## アプリケーション url
