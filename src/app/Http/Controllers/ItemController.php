@@ -15,23 +15,20 @@ use App\CategoryItem;
 class ItemController extends Controller
 {
     public function index(){
-        $item=Item::all();
-        if(Auth::check()){
-            $likes=Auth::user()->likes()->with('item')->get();
-        }
-        return view('item_all');
+        $items=Item::all();
+        return view('item_all', compact('items'));
     }
 
-    public function detail(){
-        // $items=Item::find($item_id);
-        // $likes=Like::where('item_id', $item_id)->get();
-        // $comments=Comment::where('item_id', $item_id)->get();
-        return view('item_detail');
+    public function detail($item_id){
+        $item=Item::find($item_id);
+        $likes=Like::where('item_id', $item_id)->get();
+        $comments=Comment::where('item_id', $item_id)->get();
+        return view('item_detail', compact('item', 'likes', 'comments'));
     }
 
     public function search(Request $request){
-        $item=Item::KeyWordSearch($request->keyword)->get();
-        return view('item_all');
+        $items=Item::KeyWordSearch($request->keyword)->get();
+        return view('item_all', compact('items'));
     }
 
     public function sellView(){

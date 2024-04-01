@@ -68,6 +68,13 @@
     background-size: cover;
 }
 
+.unlike-form{
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/liked.png);
+    background-size: cover;
+}
+
 .comment-form{
     width: 22px;
     height: 22px;
@@ -129,21 +136,20 @@
 .category-title, .condition-title{
     font-size: 15px;
     font-weight: bold;
-    margin-right: 30px;
+    margin-right: 40px;
 }
 
 .category-tag{
     text-align: center;
-    width: 60px;
     height: 18px;
     margin: 0 10px;
+    padding: 0 10px;
     border-radius: 10px;
     background-color: #D9D9D9;
 }
 
 .condition-tag{
     text-align: center;
-    width: 60px;
     height: 18px;
     margin: 0 10px;
 }

@@ -17,7 +17,7 @@
 @endif
 <div class="content-sell">
     <h2 class="page-title">商品の出品</h2>
-    <form class="sell-form" action="/sell" method="post">
+    <form class="sell-form" action="/sell" method="post" enctype="multipart/form-data">
         <p class="sell-form_item-name">商品画像</p>
         <div class="sell-form_item-file_container">
             <label class="sell-form_item-file_wrapper" for="img_url">

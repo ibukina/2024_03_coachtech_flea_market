@@ -17,8 +17,8 @@ class Item extends Model
         return $this->belongsTo('App\Models\Condition');
     }
 
-    public function category_items(){
-        return $this->hasMany('App\Models\CategoryItem');
+    public function categories(){
+        return $this->belongsToMany('App\Models\Category');
     }
 
     public function likes(){
