@@ -32,11 +32,28 @@
     padding: 40px 50px;
 }
 
-.detail-form_button{
+.detail-form_wrapper{
     width: 130px;
     height: 130px;
     margin: 0 25px 70px 25px;
     border: none;
     border-radius: 3px;
+}
+
+.detail-form{
+    position: relative;
+}
+
+.detail-form_button{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: none;
+    border-radius: 3px;
     background-color: #D9D9D9;
+}
+
+.detail-form_image{
+    position: absolute;
+    width: 100%;
 }

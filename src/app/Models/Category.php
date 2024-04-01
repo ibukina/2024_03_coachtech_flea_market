@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
 
     public function category_items(){
-        return $this->hasMany('App\Models\CategoryItem');
+        return $this->belongsToMany('App\Models\Item');
     }
 
     protected $fillable=[
