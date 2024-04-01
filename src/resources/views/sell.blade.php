@@ -29,15 +29,15 @@
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">カテゴリー</p>
             <select multiple class="sell-form_item-input sell-form_item-select" name="category">
-                <option value=""></option>
-                <option value=""></option>
+                <option class="sell-form_item-option" value=""></option>
+                <option class="sell-form_item-option" value=""></option>
             </select>
         </label>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">商品の状態</p>
             <select multiple class="sell-form_item-input sell-form_item-select" name="condition">
-                <option value=""></option>
-                <option value=""></option>
+                <option class="sell-form_item-option" value=""></option>
+                <option class="sell-form_item-option" value=""></option>
             </select>
         </label>
         <h3 class="name-description-title">商品名と説明</h3>
@@ -52,7 +52,10 @@
         <h3 class="price-title">販売価格</h3>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">販売価格</p>
-            <input class="sell-form_item-input" name="price" type="text" placeholder="¥">
+            <div class="sell-form_item-input_wrapper">
+                <input class="sell-form_item-input_price" name="price" type="text">
+                <span class="sell-form_item-input_span">¥</span>
+            </div>
         </label>
         <button class="sell-form_button">出品する</button>
     </form>
