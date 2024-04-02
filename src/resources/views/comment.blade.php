@@ -18,22 +18,32 @@
 <div class="content-comment">
     <div class="item-image_wrapper">
         <div class="item-image">
-            <img class="item-image_image" src="" alt="商品画像">
+            <img class="item-image_image" src="{{ asset($item->img_url) }}" alt="商品画像">
         </div>
     </div>
     <div class="item-comment_wrapper">
         <div class="item-wrapper">
-            <h2 class="item-name">商品名</h2>
+            <h2 class="item-name">{{ $item->name }}</h2>
             <div class="item-brand">ブランド名</div>
-            <div class="item-price">¥47,000(値段)</div>
+            <div class="item-price">¥{{ $item->price }}(値段)</div>
             <div class="mark-container">
                 <div class="mark-wrapper">
-                    <form class="like-form" action="/item/comment/item_id" method="post">
+                    @if(!empty($liked))
+                    @if(isset($liked[$item->id]))
+                    <form class="unlike-form" action="/item/unlike/{{ $item->id }}" method="post">
                         @csrf
-                        <input type="hidden" name="item_id" value="">
+                        <input type="hidden" name="item_id" value="{{ $item->id }}">
+                        <button class="unlike-button"></button>
+                    </form>
+                    @else
+                    <form class="like-form" action="/item/like/{{ $item->id }}" method="post">
+                        @csrf
+                        <input type="hidden" name="item_id" value="{{ $item->id }}">
                         <button class="like-button"></button>
                     </form>
-                    <div class="mark-number">3</div>
+                    @endif
+                    @endif
+                    <div class="mark-number">{{ $likes->count() }}</div>
                 </div>
                 <div class="mark-wrapper">
                     <form class="comment-form_link" action="/item/comment/item_id" method="get">
@@ -41,34 +51,28 @@
                         <input type="hidden" name="item_id" value="">
                         <button class="comment-button"></button>
                     </form>
-                    <div class="mark-number">14</div>
+                    <div class="mark-number">{{ $comments->count() }}</div>
                 </div>
             </div>
         </div>
         <div class="comment-container">
+            @if($comments)
+            @foreach($comments as $comment)
             <div class="comment-wrapper">
                 <div class="comment-user_wrapper">
-                    <img class="user-icon" src="" alt="">
-                    <div class="user-name">名前</div>
+                    @if(!empty($comment->user->profile->img_url))
+                    <img class="user-icon" src="{{ asset($comment->user->profile->img_url) }}" alt="">
+                    @else
+                    <img class="user-icon" src="{{ asset('storage/image/default.png') }}" alt="">
+                    @endif
+                    <div class="user-name">{{ $comment->user->name }}</div>
                 </div>
-                <div class="user-comment"></div>
+                <div class="user-comment">{{ $comment->comment }}</div>
             </div>
-            <div class="comment-wrapper">
-                <div class="comment-user_wrapper">
-                    <img class="user-icon" src="" alt="">
-                    <div class="user-name">名前</div>
-                </div>
-                <div class="user-comment"></div>
-            </div>
-            <div class="comment-wrapper">
-                <div class="comment-user_wrapper">
-                    <img class="user-icon" src="" alt="">
-                    <div class="user-name">名前</div>
-                </div>
-                <div class="user-comment"></div>
-            </div>
+            @endforeach
+            @endif
         </div>
-        <form class="comment-form" action="">
+        <form class="comment-form" action="/item/comment/{{ $item->id }}" method="post">
             @csrf
             <label class="comment-form_item-wrapper">
                 <p class="comment-form_item-name">商品へのコメント</p>

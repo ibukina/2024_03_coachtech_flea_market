@@ -68,6 +68,13 @@
     background-size: cover;
 }
 
+.unlike-form {
+    width: 22px;
+    height: 22px;
+    background-image: url(../img/liked.png);
+    background-size: cover;
+}
+
 .comment-form_link {
     width: 22px;
     height: 22px;
@@ -75,8 +82,7 @@
     background-size: cover;
 }
 
-.like-button,
-.comment-button {
+.like-button, .unlike-button, .comment-button {
     width: 22px;
     height: 22px;
     border: none;
