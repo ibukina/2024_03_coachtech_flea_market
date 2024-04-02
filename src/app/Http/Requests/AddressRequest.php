@@ -30,7 +30,7 @@ class AddressRequest extends FormRequest
     public function messages(){
         return[
             'postcode.required'=>'郵便番号を入力してください',
-            'postcode.integer'=>'郵便番号を数字で入力してください',
+            'postcode.integer'=>'郵便番号を数字かつハイフンなしで入力してください',
             'address.required'=>'住所を入力してください',
         ];
     }

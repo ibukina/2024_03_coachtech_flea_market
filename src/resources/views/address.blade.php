@@ -17,7 +17,7 @@
 @endif
 <div class="content-address">
     <h2 class="page-title">住所の変更</h2>
-    <form class="address-form" action="/purchase/address/item_id" method="post">
+    <form class="address-form" action="/purchase/address/{{ $item->id }}" method="post">
         @csrf
         <label class="address-form_item-wrapper">
             <p class="address-form_item-name">郵便番号</p>
