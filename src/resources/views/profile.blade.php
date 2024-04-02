@@ -19,13 +19,13 @@
 @endif
 <div class="content-profile">
     <h2 class="profile-title">プロフィール設定</h2>
-    <form class="profile-form" action="/mypage/profile" method="post">
+    <form class="profile-form" action="/mypage/profile" method="post"  enctype="multipart/form-data">
         @csrf
         <div class="user-icon_wrapper">
             <img class="user-icon" src="" alt="">
             <label class="profile-form_item-file_wrapper" for="img_url">
                 画像を選択する
-                <input class="profile-form_item-file" name="img" type="file" id="img_url">
+                <input class="profile-form_item-file" name="img_url" type="file" id="img_url">
             </label>
         </div>
         <label class="profile-form_item-wrapper">
