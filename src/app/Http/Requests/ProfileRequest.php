@@ -32,7 +32,7 @@ class ProfileRequest extends FormRequest
         return [
             'name.required'=>'ユーザー名を入力してください',
             'postcode.required'=>'郵便番号を入力してください',
-            'postcode.integer'=>'郵便番号を数字で入力してください',
+            'postcode.integer'=>'郵便番号を数字かつハイフンなしで入力してください',
             'address.required'=>'住所を入力してください',
         ];
     }

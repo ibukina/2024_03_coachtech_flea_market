@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\AddressRequest;
 use Illuminate\Support\Facades\Auth;
-use Ap\Models\Profile;
+use App\Models\Profile;
 use App\Models\Item;
 use App\Models\Purchase;
 use App\Models\SoldItem;
 
 class PurchaseController extends Controller
 {
-    public function index(){
-        // $items=Item::find($item_id);
-        return view('purchase');
+    public function index($item_id){
+        $item=Item::find($item_id);
+        return view('purchase', compact('item'));
     }
 
     public function purchase(Request $request){
@@ -27,16 +27,17 @@ class PurchaseController extends Controller
     }
 
     public function address($item_id){
-        return view('address');
+        $item=Item::find($item_id);
+        return view('address', compact('item'));
     }
 
-    public function updateAddress(AddressRequest $request){
-        $user_id=Auth::user();
+    public function updateAddress(AddressRequest $request, $item_id){
+        $user_id=Auth::id();
         Profile::where('user_id', $user_id)->update([
             'postcode'=>$request['postcode'],
             'address'=>$request['address'],
             'building'=>$request['building'],
         ]);
-        return redirect('/purchase/item_id');
+        return redirect('/purchase/$item_id');
     }
 }

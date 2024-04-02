@@ -36,8 +36,8 @@ Route::group(['middleware'=>['auth']], function (){
     Route::post('/item/unlike/{item_id}', [LikeController::class, 'destroy']);
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
     Route::post('/purchase/{item_id}', [PurchaseController::class, 'purchase']);
-    Route::get('/purchase/address/item_id', [PurchaseController::class, 'address']);
-    Route::post('/purchase/address/item_id', [PurchaseController::class, 'updateAddress']);
+    Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
+    Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'updateAddress']);
     Route::get('/sell', [ItemController::class, 'sellView']);
     Route::post('/sell', [ItemController::class, 'sellCreate']);
     Route::get('/mypage', [UserController::class, 'mypage']);
