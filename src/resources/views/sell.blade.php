@@ -18,26 +18,31 @@
 <div class="content-sell">
     <h2 class="page-title">商品の出品</h2>
     <form class="sell-form" action="/sell" method="post" enctype="multipart/form-data">
+        @csrf
         <p class="sell-form_item-name">商品画像</p>
         <div class="sell-form_item-file_container">
             <label class="sell-form_item-file_wrapper" for="img_url">
                 画像を選択する
-                <input class="sell-form_item-file" name="img" type="file" id="img_url">
+                <input class="sell-form_item-file" name="store_image" type="file" id="img_url">
             </label>
         </div>
         <h3 class="detail-title">商品の詳細</h3>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">カテゴリー</p>
-            <select multiple class="sell-form_item-input sell-form_item-select" name="category">
+            <select multiple class="sell-form_item-input sell-form_item-select" name="category_id">
                 <option class="sell-form_item-option" value=""></option>
-                <option class="sell-form_item-option" value=""></option>
+                @foreach($categories as $category)
+                <option class="sell-form_item-option" value="{{ $category->id }}">{{ $category->category }}</option>
+                @endforeach
             </select>
         </label>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">商品の状態</p>
-            <select multiple class="sell-form_item-input sell-form_item-select" name="condition">
+            <select multiple class="sell-form_item-input sell-form_item-select" name="condition_id">
                 <option class="sell-form_item-option" value=""></option>
-                <option class="sell-form_item-option" value=""></option>
+                @foreach($conditions as $condition)
+                <option class="sell-form_item-option" value="{{ $condition->id }}">{{ $condition->condition }}</option>
+                @endforeach
             </select>
         </label>
         <h3 class="name-description-title">商品名と説明</h3>

@@ -8,14 +8,18 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Profile;
+use App\Models\Item;
+use App\Models\SoldItem;
 
 class UserController extends Controller
 {
     public function mypage(){
-        $user=Auth::user()->profile;
-        // $likes=Auth::user()->likes()->with('item')->get();
-        // $sells=Auth::user()->with('item')->get();
-        return view('mypage', compact('user'));
+        $user=Auth::user();
+        $profile=Auth::user()->profile;
+        $user_id=Auth::id();
+        $sells=Item::where('user_id', $user_id)->get();
+        // $purchases=SoldItem::where('user_id', $user_id)->with('items')->get();
+        return view('mypage', compact('user', 'profile', 'sells'));
     }
 
     public function profile(){
@@ -26,8 +30,8 @@ class UserController extends Controller
     public function updateProfile(ProfileRequest $request){
         $user_id=Auth::id();
         $read_path='storage/image/default.png';
-        if($request->hasFile('img')){
-            $image_file=$request->file('img');
+        if($request->hasFile('img_url')){
+            $image_file=$request->file('img_url');
             $filename=$image_file->getClientOriginalName();
             $image_path=$image_file->storeAs('public/image', $filename);
             //画像を保存するパスは"public/image/xxx.jpeg"
@@ -35,13 +39,14 @@ class UserController extends Controller
             // 画像のパスをデータベースに保存
         }
         User::find($user_id)->update(['name'=>$request->name]);
-        Profile::updateOrCreate([
-            'user_id'=>$user_id,
+        Profile::updateOrCreate(
+            ['user_id'=>$user_id],
+            ['user_id'=>$user_id,
             'img_url'=>$read_path,
             'postcode'=>$request['postcode'],
             'address'=>$request['address'],
-            'building'=>$request['building'],
-        ]);
+            'building'=>$request['building'],]
+        );
         return redirect('/mypage');
     }
 }

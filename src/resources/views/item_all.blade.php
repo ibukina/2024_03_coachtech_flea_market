@@ -16,8 +16,8 @@
         <div class="detail-form_wrapper">
             <form class="detail-form" action="/item/{{ $item->id }}" method="get">
                 @csrf
-                <button class="detail-form_button"></button>
                 <img class="detail-form_image" src="{{ asset($item->img_url) }}" alt="">
+                <button class="detail-form_button"></button>
             </form>
         </div>
         @endforeach

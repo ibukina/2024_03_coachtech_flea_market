@@ -8,8 +8,12 @@
 <div class="content-mypage">
     <div class="user-info_wrapper">
         <div class="user-info">
-            <img class="user-icon" src="{{ $user->img_url }}" alt="">
-            <div class="user-name">{{ $user->user->name }}</div>
+            @if($profile)
+            <img class="user-icon" src="{{ asset($profile->img_url) }}" alt="">
+            @else
+            <img class="user-icon" src="{{ asset('storage/image/default.png') }}" alt="">
+            @endif
+            <div class="user-name">{{ $user->name }}</div>
         </div>
         <div class="profile-link_wrapper">
             <a class="profile-link" href="/mypage/profile">プロフィールを編集</a>
@@ -20,12 +24,17 @@
         <button class="mypage-tag purchase-item_tag">購入した商品</button>
     </div>
     <div class="item-wrapper">
-        @for ($i = 0; $i < 10; $i++)
-        <form class="detail-form" action="/item/item_id" method="get">
-            @csrf
-            <button class="detail-form_button"></button>
-        </form>
-        @endfor
+        @if($sells)
+        @foreach($sells as $sell)
+        <div class="detail-form_wrapper">
+            <form class="detail-form" action="/item/{{ $sell->id }}" method="get">
+                @csrf
+                <img class="detail-form_image" src="{{ asset($sell->img_url) }}" alt="">
+                <button class="detail-form_button"></button>
+            </form>
+        </div>
+        @endforeach
+        @endif
     </div>
 </div>
 @endsection

@@ -10,12 +10,15 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Like;
 use App\Models\Comment;
-use App\CategoryItem;
+use App\Models\Condition;
+use App\Models\Category;
 
 class ItemController extends Controller
 {
     public function index(){
         $items=Item::all();
+        $user_id=Auth::id();
+        $likes=Like::where('user_id', $user_id)->with('items')->get();
         return view('item_all', compact('items'));
     }
 
@@ -32,11 +35,13 @@ class ItemController extends Controller
     }
 
     public function sellView(){
-        return view('sell');
+        $conditions=Condition::all();
+        $categories=Category::all();
+        return view('sell', compact('conditions', 'categories'));
     }
 
     public function sellCreate(ItemRequest $request){
-        $image_file=$request->file('img');
+        $image_file=$request->file('store_image');
         $filename=$image_file->getClientOriginalName();
         $image_path=$image_file->storeAs('public/image', $filename);
         //画像を保存するパスは"public/image/xxx.jpeg"
@@ -45,7 +50,7 @@ class ItemController extends Controller
         $user_id=Auth::id();
         $item=Item::create([
             'user_id'=>$user_id,
-            'condition_id'=>$request->condition,
+            'condition_id'=>$request->condition_id,
             'name'=>$request->name,
             'price'=>$request->price,
             'description'=>$request->description,
@@ -53,7 +58,7 @@ class ItemController extends Controller
         ]);
         DB::table('category_item')->insert([
             'item_id' => $item->id,
-            'category_id' => $request->category,
+            'category_id' => $request->category_id,
         ]);
         return redirect('/');
     }

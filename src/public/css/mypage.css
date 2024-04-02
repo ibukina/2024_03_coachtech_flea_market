@@ -78,15 +78,23 @@
 }
 
 .detail-form_wrapper {
-    width: 130px;
-    height: 130px;
-    margin: 0 25px 70px 25px;
+    width: 140px;
+    height: 140px;
+    margin: 0 30px 70px 30px;
     border: none;
     border-radius: 3px;
 }
 
 .detail-form {
     position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.detail-form_image {
+    position: absolute;
+    width: 100%;
+    background-color: #D9D9D9;
 }
 
 .detail-form_button {
@@ -95,10 +103,5 @@
     height: 140px;
     border: none;
     border-radius: 3px;
-    background-color: #D9D9D9;
-}
-
-.detail-form_image {
-    position: absolute;
-    width: 100%;
+    opacity: 0;
 }
