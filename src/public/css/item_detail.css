@@ -82,7 +82,7 @@
     background-size: cover;
 }
 
-.like-button, .comment-button{
+.like-button, .unlike-button, .comment-button{
     width: 22px;
     height: 22px;
     border: none;
