@@ -26,17 +26,17 @@ class UsersTableSeeder extends Seeder
                 'password'=>Hash::make('2DDywxxwE3VM@D1'),
             ],
             [
-                'name'=>'new user',
+                'name'=>'名前',
                 'email'=>'test3@example.com',
                 'password'=>Hash::make('2DDywxxwE3VM@D2'),
             ],
             [
-                'name'=>'new user',
+                'name'=>'名前',
                 'email'=>'test4@example.com',
                 'password'=>Hash::make('2DDywxxwE3VM@D3'),
             ],
             [
-                'name'=>'new user',
+                'name'=>'名前',
                 'email'=>'test5@example.com',
                 'password'=>Hash::make('2DDywxxwE3VM@D5'),
             ],
