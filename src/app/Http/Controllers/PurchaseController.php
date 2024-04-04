@@ -38,6 +38,6 @@ class PurchaseController extends Controller
             'address'=>$request['address'],
             'building'=>$request['building'],
         ]);
-        return redirect('/purchase/$item_id');
+        return redirect()->route('purchaseView', ['item_id'=>$item_id]);
     }
 }

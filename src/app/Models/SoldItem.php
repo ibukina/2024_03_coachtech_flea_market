@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SoldItem extends Model
 {
     use HasFactory;
+    protected $table = 'sold_item';
 
     public function user(){
         return $this->belongsTo('App\Models\User');
