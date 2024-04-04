@@ -15,20 +15,18 @@
         <div class="item-detail">
             <h2 class="item-name">{{ $item->name }}</h2>
             <div class="item-brand">ブランド名</div>
-            <div class="item-price">¥{{ $item->price }}(値段)</div>
+            <div class="item-price">¥{{ number_format($item->price) }}(値段)</div>
             <div class="mark-container">
                 <div class="mark-wrapper">
                     @if(!empty($liked))
                     @if(isset($liked[$item->id]))
                     <form class="unlike-form" action="/item/unlike/{{ $item->id }}" method="post">
                         @csrf
-                        <input type="hidden" name="item_id" value="{{ $item->id }}">
                         <button class="unlike-button"></button>
                     </form>
                     @else
                     <form class="like-form" action="/item/like/{{ $item->id }}" method="post">
                         @csrf
-                        <input type="hidden" name="item_id" value="{{ $item->id }}">
                         <button class="like-button"></button>
                     </form>
                     @endif

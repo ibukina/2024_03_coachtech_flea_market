@@ -19,7 +19,7 @@ class ItemController extends Controller
         $items=Item::all();
         $user_id=Auth::id();
         $likes=Like::where('user_id', $user_id)->with('item')->get();
-        return view('item_all', compact('items'));
+        return view('item_all', compact('items', 'likes'));
     }
 
     public function detail($item_id){
