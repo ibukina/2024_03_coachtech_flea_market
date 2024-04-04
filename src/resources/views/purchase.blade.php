@@ -17,7 +17,7 @@
                 </div>
                 <div class="item-name_price">
                     <h2 class="item-name">{{ $item->name }}</h2>
-                    <p class="item-price">¥{{ $item->price }}</p>
+                    <p class="item-price">¥{{ number_format($item->price) }}</p>
                 </div>
             </div>
             <div class="link-wrapper">
@@ -38,7 +38,7 @@
                     </tr>
                     <tr class="table-row">
                         <th class="table-header">商品代金</th>
-                        <td class="table-data">¥{{ $item->price }}</td>
+                        <td class="table-data">¥{{ number_format($item->price) }}</td>
                     </tr>
                     <tr class="table-row">
                         <th class="table-header"></th>
@@ -50,7 +50,7 @@
                     </tr>
                     <tr class="table-row">
                         <th class="table-header">支払い金額</th>
-                        <td class="table-data">¥{{ $item->price }}</td>
+                        <td class="table-data">¥{{ number_format($item->price) }}</td>
                     </tr>
                     <tr class="table-row">
                         <th class="table-header">支払い方法</th>
