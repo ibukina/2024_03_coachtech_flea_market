@@ -15,16 +15,6 @@ class CommentsTableSeeder extends Seeder
     {
         $comments=[
             [
-                'user_id'=>'1',
-                'item_id'=>'1',
-                'comment'=>'コメント',
-            ],
-            [
-                'user_id'=>'2',
-                'item_id'=>'1',
-                'comment'=>'コメント',
-            ],
-            [
                 'user_id'=>'3',
                 'item_id'=>'1',
                 'comment'=>'コメント',
@@ -35,7 +25,12 @@ class CommentsTableSeeder extends Seeder
                 'comment'=>'コメント',
             ],
             [
-                'user_id'=>'5',
+                'user_id'=>'1',
+                'item_id'=>'1',
+                'comment'=>'コメント',
+            ],
+            [
+                'user_id'=>'2',
                 'item_id'=>'1',
                 'comment'=>'コメント',
             ],
@@ -81,6 +76,11 @@ class CommentsTableSeeder extends Seeder
             ],
             [
                 'user_id'=>'14',
+                'item_id'=>'1',
+                'comment'=>'コメント',
+            ],
+            [
+                'user_id'=>'5',
                 'item_id'=>'1',
                 'comment'=>'コメント',
             ],

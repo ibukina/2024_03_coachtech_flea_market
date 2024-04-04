@@ -15,15 +15,14 @@ class UserController extends Controller
 {
     public function mypage(){
         $user=Auth::user();
-        $profile=Auth::user()->profile;
-        $user_id=Auth::id();
+        $profile=$user->profile;
+        $user_id=$user->id;
         $sells=Item::where('user_id', $user_id)->get();
-        // $purchases=SoldItem::where('user_id', $user_id)->with('items')->get();
+        $purchases=SoldItem::where('user_id', $user_id)->get();
         return view('mypage', compact('user', 'profile', 'sells'));
     }
 
     public function profile(){
-        $users=Auth::user();
         return view('profile');
     }
 
