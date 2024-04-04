@@ -14,11 +14,12 @@ class LikeController extends Controller
             'user_id'=>$user_id,
             'item_id'=>$item_id,
         ]);
-        return redirect('/');
+        return redirect()->route('detailView', ['item_id'=>$item_id]);
     }
 
     public function destroy($item_id){
-        Like::find($item_id)->delete();
-        return redirect('/');
+        $user_id=Auth::id();
+        Like::where('item_id', $item_id)->where('user_id', $user_id)->delete();
+        return redirect()->route('detailView', ['item_id'=>$item_id]);
     }
 }

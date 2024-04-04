@@ -21,7 +21,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [ItemController::class, 'index']);
-Route::get('/item/{item_id}', [ItemController::class, 'detail']);
+Route::get('/item/{item_id}', [ItemController::class, 'detail'])->name('detailView');
 Route::post('/item/search', [ItemController::class, 'search']);
 Route::get('/register', [RegisteredUserController::class, 'index']);
 Route::post('/register', [RegisteredUserController::class, 'create']);
@@ -34,7 +34,7 @@ Route::group(['middleware'=>['auth']], function (){
     Route::post('/item/comment/{item_id}', [CommentController::class, 'create']);
     Route::post('/item/like/{item_id}', [LikeController::class, 'create']);
     Route::post('/item/unlike/{item_id}', [LikeController::class, 'destroy']);
-    Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
+    Route::get('/purchase/{item_id}', [PurchaseController::class, 'index'])->name('purchaseView');
     Route::post('/purchase/{item_id}', [PurchaseController::class, 'purchase']);
     Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
     Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'updateAddress']);
