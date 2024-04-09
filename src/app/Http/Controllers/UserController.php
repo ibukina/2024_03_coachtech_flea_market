@@ -19,7 +19,7 @@ class UserController extends Controller
         $user_id=$user->id;
         $sells=Item::where('user_id', $user_id)->get();
         $purchases=SoldItem::where('user_id', $user_id)->get();
-        return view('mypage', compact('user', 'profile', 'sells'));
+        return view('mypage', compact('user', 'profile', 'sells', 'purchases'));
     }
 
     public function profile(){

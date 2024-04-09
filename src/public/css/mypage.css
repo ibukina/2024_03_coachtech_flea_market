@@ -49,6 +49,10 @@
     color: #FF5555;
 }
 
+.mypage-tag_container{
+    width: 100%;
+}
+
 .mypage-tag_wrapper{
     display: flex;
     align-items: flex-end;
@@ -67,7 +71,7 @@
     color: #5F5F5F;
 }
 
-.sell-item_tag{
+.active {
     color: #FF0000;
 }
 
