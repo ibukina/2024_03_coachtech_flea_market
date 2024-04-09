@@ -18,18 +18,16 @@
             <div class="item-price">¥{{ number_format($item->price) }}(値段)</div>
             <div class="mark-container">
                 <div class="mark-wrapper">
-                    @if(!empty($liked))
-                    @if(isset($liked[$item->id]))
+                    @if(!empty($liked) && isset($liked[$item->id]))
                     <form class="unlike-form" action="/item/unlike/{{ $item->id }}" method="post">
                         @csrf
                         <button class="unlike-button"></button>
                     </form>
-                    @else
+                    @elseif(empty($liked) || !isset($liked[$item->id]))
                     <form class="like-form" action="/item/like/{{ $item->id }}" method="post">
                         @csrf
                         <button class="like-button"></button>
                     </form>
-                    @endif
                     @endif
                     <div class="mark-number">{{ $likes->count() }}</div>
                 </div>

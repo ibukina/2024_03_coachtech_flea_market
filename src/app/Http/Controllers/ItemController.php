@@ -25,16 +25,21 @@ class ItemController extends Controller
     public function detail($item_id){
         $item=Item::find($item_id);
         $likes=Like::where('item_id', $item_id)->get();
-        $user_id=Auth::id();
-        $liked=Auth::user()->likes()->get();
-        $liked=$liked->keyBy('item_id');
         $comments=Comment::where('item_id', $item_id)->get();
-        return view('item_detail', compact('item', 'likes', 'liked', 'comments'));
+        $user_id=Auth::id();
+        if(Auth::check()){
+            $liked=Auth::user()->likes()->get();
+            $liked=$liked->keyBy('item_id');
+            return view('item_detail', compact('item', 'likes', 'liked', 'comments'));
+        }
+        return view('item_detail', compact('item', 'likes', 'comments'));
     }
 
     public function search(Request $request){
         $items=Item::KeyWordSearch($request->keyword)->get();
-        return view('item_all', compact('items'));
+        $user_id=Auth::id();
+        $likes=Like::where('user_id', $user_id)->with('item')->get();
+        return view('item_all', compact('items', 'likes'));
     }
 
     public function sellView(){
