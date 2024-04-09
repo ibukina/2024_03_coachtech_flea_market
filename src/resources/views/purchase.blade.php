@@ -22,10 +22,13 @@
             </div>
             <div class="link-wrapper">
                 <div class="payment-name">支払い方法</div>
+                <div class="payment-method"></div>
                 <a class="payment-link" href="/address/{{ $item->id }}">変更する</a>
             </div>
             <div class="link-wrapper">
                 <div class="address-name">配送先</div>
+                <div class="shipping-address_address">{{ $profile->address }}</div>
+                <div class="shipping-address_building">{{ $profile->building }}</div>
                 <a class="address-link" href="/purchase/address/{{ $item->id }}">変更する</a>
             </div>
         </div>

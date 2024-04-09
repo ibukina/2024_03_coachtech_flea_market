@@ -14,7 +14,8 @@ class PurchaseController extends Controller
 {
     public function index($item_id){
         $item=Item::find($item_id);
-        return view('purchase', compact('item'));
+        $profile=Auth::user()->profile;
+        return view('purchase', compact('item', 'profile'));
     }
 
     public function purchase(Request $request){
