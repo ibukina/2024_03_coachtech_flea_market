@@ -64,6 +64,32 @@
 
 ## アプリケーション url
 
+ログインなしで閲覧可能なページ
+
+- 会員登録ページ
+  http://localhost/register
+- ログインページ
+  http://localhost/login
+- 商品一覧ページ
+  http://localhost/
+- 商品詳細ページ
+  http://localhost/item/:item_id
+
+ログインが必要なページ
+
+- 出品ページ
+  http://localhost/sell
+- コメントページ
+  http://localhost/comment/:item_id
+- 購入ページ
+  http://localhost/purchase/:item_id
+- 住所変更ページ
+  http://localhost/purchase/address/:item_id
+- マイページ
+  http://localhost/mypage
+- プロフィール編集ページ
+  http://localhost/mypage/profile
+
 ## 機能一覧
 
 - 会員登録
@@ -86,9 +112,22 @@
 
 ## 使用技術(実行環境)
 
+> laravel Framework 10.47.0<br>
+> php 8.1.27<br>
+> mysql 8.0.33<br>
+> nginx 1.25.4<br>
+> livewire 3.4<br>
+
 ## テーブル設計
 
+<details>
+<summary>テーブル一覧</summary>
+
+</details>
+
 ## ER 図
+
+![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/4c426fca-83cb-4afb-9857-24d1e758e80d)
 
 ## 環境構築
 
