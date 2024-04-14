@@ -59,7 +59,34 @@
 }
 
 .sell-form_item-option {
-    height: 20px;
+    height: 35px;
+}
+
+select {
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.sell-form_item-checkbox_container{
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    border: 1px solid #5F5F5F;
+    border-radius: 3px;
+}
+
+.sell-form_item-checkbox_wrapper{
+    display: flex;
+    width: 100%;
+    font-size: 17px;
+}
+
+.sell-form_item-checkbox{
+    width: 15px;
+    margin-right: 5px;
 }
 
 .sell-form_item-input, .sell-form_item-input_price{
@@ -101,26 +128,5 @@
     background-color: #FF5555;
     font-size: 17px;
     font-weight: bold;
-    color: white;
-}
-
-.error-wrapper {
-    width: 100%;
-}
-
-.error-has {
-    padding: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #FF5555;
-}
-
-.error-message_wrapper {
-    padding: 15px;
-    background-color: #FF5555;
-}
-
-.error-message {
-    font-size: 18px;
     color: white;
 }

@@ -29,12 +29,7 @@
         <h3 class="detail-title">商品の詳細</h3>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">カテゴリー</p>
-            <select multiple class="sell-form_item-input sell-form_item-select" name="category_id">
-                <option class="sell-form_item-option" value=""></option>
-                @foreach($categories as $category)
-                <option class="sell-form_item-option" value="{{ $category->id }}">{{ $category->category }}</option>
-                @endforeach
-            </select>
+            @livewire('category-checkbox', ['categories'=>$categories])
         </label>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">商品の状態</p>
@@ -52,7 +47,7 @@
         </label>
         <label class="sell-form_item-wrapper">
             <p class="sell-form_item-name">商品の説明</p>
-            <input class="sell-form_item-input" name="description" type="text">
+            <textarea class="sell-form_item-input" name="description" type="text"></textarea>
         </label>
         <h3 class="price-title">販売価格</h3>
         <label class="sell-form_item-wrapper">
