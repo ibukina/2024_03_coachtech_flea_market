@@ -55,23 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="comment-container">
-            @if($comments)
-            @foreach($comments as $comment)
-            <div class="comment-wrapper">
-                <div class="comment-user_wrapper">
-                    @if(!empty($comment->user->profile->img_url))
-                    <img class="user-icon" src="{{ asset($comment->user->profile->img_url) }}" alt="">
-                    @else
-                    <img class="user-icon" src="{{ asset('storage/image/default.png') }}" alt="">
-                    @endif
-                    <div class="user-name">{{ $comment->user->name }}</div>
-                </div>
-                <div class="user-comment">{{ $comment->comment }}</div>
-            </div>
-            @endforeach
-            @endif
-        </div>
+        @livewire('comment-select', ['comments'=>$comments, 'item'=>$item])
         <form class="comment-form" action="/item/comment/{{ $item->id }}" method="post">
             @csrf
             <label class="comment-form_item-wrapper">

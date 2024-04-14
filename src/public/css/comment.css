@@ -125,9 +125,18 @@
     font-weight: bold;
 }
 
+.user-comment_delete-button{
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #FF5555;
+    font-size: 14px;
+    color: white;
+}
+
 .user-comment{
     width: 100%;
-    height: 35px;
+    padding: 7px 5px;
     border-radius: 3px;
     background-color: #D9D9D9;
     font-size: 14px;
@@ -165,26 +174,5 @@
     background-color: #FF5555;
     font-size: 18px;
     font-weight: bold;
-    color: white;
-}
-
-.error-wrapper {
-    width: 100%;
-}
-
-.error-has {
-    padding: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #FF5555;
-}
-
-.error-message_wrapper {
-    padding: 15px;
-    background-color: #FF5555;
-}
-
-.error-message {
-    font-size: 18px;
     color: white;
 }

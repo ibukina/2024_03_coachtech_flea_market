@@ -30,8 +30,9 @@ Route::post('/login', [AuthenticatedSessionController::class, 'create']);
 
 Route::group(['middleware'=>['auth']], function (){
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
-    Route::get('/item/comment/{item_id}', [CommentController::class, 'index']);
+    Route::get('/item/comment/{item_id}', [CommentController::class, 'index'])->name('commentView');
     Route::post('/item/comment/{item_id}', [CommentController::class, 'create']);
+    Route::post('/item/comment/delete/{comment_id}/{item_id}', [CommentController::class, 'destroy']);
     Route::post('/item/like/{item_id}', [LikeController::class, 'create']);
     Route::post('/item/unlike/{item_id}', [LikeController::class, 'destroy']);
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'index'])->name('purchaseView');

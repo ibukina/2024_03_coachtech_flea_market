@@ -51,9 +51,11 @@
             <h3 class="information-title">商品の情報</h3>
             <div class="category-wrapper">
                 <div class="category-title">カテゴリー</div>
-                @foreach($item->categories as $category)
-                <div class="category-tag">{{ $category->category }}</div>
-                @endforeach
+                <div class="category-tag_wrapper">
+                    @foreach($item->categories as $category)
+                    <div class="category-tag">{{ $category->category }}</div>
+                    @endforeach
+                </div>
             </div>
             <div class="condition-wrapper">
                 <div class="condition-title">商品の状態</div>
