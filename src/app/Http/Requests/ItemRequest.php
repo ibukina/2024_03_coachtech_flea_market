@@ -25,7 +25,7 @@ class ItemRequest extends FormRequest
             'name'=>['required',],
             'price'=>['required', 'integer'],
             'description'=>['required', 'min:20'],
-            'img_url'=>['required',],
+            'store_image'=>['required', 'file', 'image',],
             'category_id'=>['required',],
             'condition_id'=>['required',],
         ];
@@ -38,7 +38,9 @@ class ItemRequest extends FormRequest
             'price.integer'=>'商品価格を数字で入力してください',
             'description.required'=>'商品の説明を入力してください',
             'description.min'=>'商品の説明を20文字以上入力してください',
-            'img_url.required'=>'商品の画像を選択してください',
+            'store_image.required'=>'商品の画像を選択してください',
+            'store_image.file'=>'画像のアップロードが出来ていません',
+            'store_image.image'=>'画像ファイルを選択してください',
             'category_id.required'=>'カテゴリーを選択してください',
             'condition_id.required'=>'商品の状態を選択してください',
         ];
