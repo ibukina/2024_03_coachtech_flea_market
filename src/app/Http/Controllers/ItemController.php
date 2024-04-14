@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ItemRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
@@ -12,6 +11,7 @@ use App\Models\Like;
 use App\Models\Comment;
 use App\Models\Condition;
 use App\Models\Category;
+use App\Models\CategoryItem;
 
 class ItemController extends Controller
 {
@@ -64,10 +64,12 @@ class ItemController extends Controller
             'description'=>$request->description,
             'img_url'=>$read_path,
         ]);
-        DB::table('category_item')->insert([
-            'item_id' => $item->id,
-            'category_id' => $request->category_id,
-        ]);
+        foreach($request->category_id as $category_id){
+            CategoryItem::create([
+                'item_id' => $item->id,
+                'category_id' => $category_id,
+            ]);
+        }
         return redirect('/');
     }
 }
