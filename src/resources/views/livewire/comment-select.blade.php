@@ -1,8 +1,9 @@
 <div class="comment-container">
     @if($comments)
-        @foreach($comments as $comment)
+        @foreach($comments as $index => $comment)
+        @if($index < 2 || $index == count($comments) - 1 || $showComments)
             <div class="comment-wrapper">
-                <div class="comment-user_wrapper">
+                <div class="comment-user_wrapper {{ $index == count($comments) - 1 ? 'last-comment' : '' }}">
                     @if(!empty($comment->user->profile->img_url))
                     <img class="user-icon" src="{{ asset($comment->user->profile->img_url) }}" alt="">
                     @else
@@ -18,6 +19,10 @@
                 </div>
                 <div class="user-comment">{{ $comment->comment }}</div>
             </div>
+        @endif
         @endforeach
+    @endif
+    @if(count($comments) > 3)
+        <button wire:click="toggleComments" class="toggle-comment">{{ $showComments ? '元に戻す' : 'もっと見る' }}</button>
     @endif
 </div>

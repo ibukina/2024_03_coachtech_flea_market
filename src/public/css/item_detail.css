@@ -118,6 +118,7 @@
 
 .item-color, .item-description{
     margin: 3px 0;
+    white-space: pre-wrap;
     font-size: 14px;
 }
 
