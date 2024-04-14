@@ -27,6 +27,11 @@ class CommentController extends Controller
             'item_id'=>$item_id,
             'comment'=>$request['comment'],
         ]);
-        return redirect('/');
+        return redirect()->route('commentView', ['item_id'=>$item_id]);
+    }
+
+    public function destroy($comment_id, $item_id){
+        Comment::find($comment_id)->delete();
+        return redirect()->route('commentView', ['item_id'=>$item_id]);
     }
 }
