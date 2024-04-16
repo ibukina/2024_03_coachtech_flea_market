@@ -20,7 +20,7 @@ class ItemsTableSeeder extends Seeder
                 'description'=>'新品
                 商品の状態は良好です。傷もありません。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'1',
             ],
@@ -29,7 +29,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'1000',
                 'description'=>'中古品です。金属部分が多少曇っている以外問題ありません。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'2',
             ],
@@ -38,7 +38,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'2000',
                 'description'=>'中古品です。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'2',
             ],
@@ -47,7 +47,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'15000',
                 'description'=>'中古
                 状態は良好です。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'2',
                 'condition_id'=>'1',
             ],
@@ -56,8 +56,8 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'500',
                 'description'=>'中古
                 外側はきれいですが内側がひどく、小銭入れなどが機能していません。',
-                'img_url'=>'storage/image/default.png',
-                'user_id'=>'2',
+                'img_url'=>'image/default.png',
+                'user_id'=>'4',
                 'condition_id'=>'3',
             ],
             [
@@ -65,8 +65,8 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'6000',
                 'description'=>'新品の半袖Ｔシャツです。色はすべて青です。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
-                'user_id'=>'1',
+                'img_url'=>'image/default.png',
+                'user_id'=>'2',
                 'condition_id'=>'1',
             ],
             [
@@ -74,7 +74,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'23000',
                 'description'=>'新品です。いまの流行ではないため低めに価格設定しています。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'1',
             ],
@@ -83,7 +83,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'5000',
                 'description'=>'中古品です。小さいですがダイヤモンドがついています。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'2',
             ],
@@ -92,7 +92,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'1200',
                 'description'=>'中古品です。新品同然とは言えませんが普通にきれいな状態です。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'2',
             ],
@@ -101,7 +101,7 @@ class ItemsTableSeeder extends Seeder
                 'price'=>'1200',
                 'description'=>'中古品です。金属部分の曇り、針が曲がっているなど悪い状態です。
                 購入後、即発送いたします。',
-                'img_url'=>'storage/image/default.png',
+                'img_url'=>'image/default.png',
                 'user_id'=>'1',
                 'condition_id'=>'3',
             ],
