@@ -12,8 +12,20 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function role(){
+        return $this->belongsTo('App\Models\Role');
+    }
+
     public function profile(){
         return $this->hasOne('App\Models\Profile');
+    }
+
+    public function shops(){
+        return $this->belongsToMany('App\Models\Shop');
+    }
+
+    public function staffs(){
+        return $this->hasMany('App\Models\Staff');
     }
 
     public function items(){
@@ -38,6 +50,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role_id',
         'name',
         'email',
         'password',

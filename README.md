@@ -123,11 +123,45 @@
 <details>
 <summary>テーブル一覧</summary>
 
+- RolesTable
+  ![flea_market_table_roles](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/43f0ec8e-0803-4fc3-9400-50fb20ea51b1)
+
+- UsersTable
+  ![flea_market_table_users](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/8a9bc0fd-5275-4cf4-8d00-5be33238b6ee)
+
+- ProfilesTable
+  ![flea_market_table_profiles](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/82ef3c25-6fbe-4106-9264-f6ce8aea1ebe)
+
+- ShopsTable
+
+- StaffsTable
+
+- ConditionsTable
+  ![flea_market_table_conditions](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/1987bcf1-f18e-41c9-ac7a-8b4b9680f2cc)
+
+- ItemsTable
+  ![flea_market_table_items](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/62a5ad73-d75a-4508-b79e-c8f5d06de216)
+
+- CategoriesTable
+  ![flea_market_table_categories](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/cfc90d77-9a03-4649-a54a-3c1ded4cdca6)
+
+- CategoryItemTable
+  ![flea_market_table_category_item](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/65bbb5ca-5cc9-49ca-9038-41ab31f71dd9)
+
+- LikesTable
+  ![flea_market_table_likes](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/d34a852e-854d-4e61-8af4-3dd671988f2a)
+
+- SoldItemTable
+  ![flea_market_table_sold_item](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/286945ca-7e30-414e-bbc6-1e899f05c7d3)
+
+- CommentsTable
+  ![flea_market_table_comments](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/b3b3149a-781a-4159-818d-ae7a6c556333)
+
 </details>
 
 ## ER 図
 
-![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/4c426fca-83cb-4afb-9857-24d1e758e80d)
+![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/badbe4c2-0404-4107-ac3c-a9efbbbb4554)
 
 ## 環境構築
 
@@ -269,15 +303,61 @@ php artisan migrate
 を実行して、マイグレーションテーブルを作成してください。<br>
 
 - ストレージのシンボリックリンク作成<br>
-  画像を表示するために、php コンテナで
+  このアプリケーションでは画像を storage/app/public/image 以下に保存するため、シンボリックリンクと保存先の image ディレクトリを作成します。
+
+```phpコンテナ
+chmod -R 775 storage
+```
+
+```phpコンテナ
+chmod -R 775 public/storage
+```
 
 ```phpコンテナ
 php artisan storage:link
 ```
 
-を行ってください。
+```phpコンテナ
+mkdir -p storage/app/public/image
+```
+
+これらを順に行ってください。
+
+- データの作成
+  デフォルトの情報を作成するため、シーディングを行います。
+
+```phpコンテナ
+php artisan db:seed
+```
+
+これでデータが作成されました。
 
 php コンテナからのログアウトには`exit`を実行してください。<br>
-これで環境構築は終了です。お疲れ様でした。
+これでローカル環境の構築は終了です。お疲れ様でした。
 
 ## テストユーザー
+
+> 一般ユーザー
+> メールアドレス：test@example.com
+> パスワード：2DDywxxwE3VM@D4
+>
+> 店舗代表者
+> merchant@example.com
+> 2DDywxxwE3VM@C3
+>
+> 管理者
+> admin@example.com
+> 2DDywxxwE3VM@B2
+
+## シーディングについて
+
+新たにデフォルトのデータを追加や削除したい場合は、src/database/seeders 以下に各テーブルに対応するファイルがございますので、VSCode 等を利用してカラム制約に気を付けながら変更して頂ければと思います。
+シーディングファイルの変更後は
+
+```phpコンテナ
+php artisan migrate:refresh --seed
+```
+
+を行い、変更を反映させてください。
+
+> [!IMPORTANT] > `php artisan migrate:refresh`を行うとデータベースの内容もリセットされるため注意してください。
