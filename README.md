@@ -332,6 +332,15 @@ php artisan db:seed
 
 これでデータが作成されました。
 
+- ページネーションのデフォルトファイル
+  ページネーションは laravel のデフォルトのものを使用していますので、
+
+```phpコンテナ
+php artisan vendor:publish --tag=laravel-pagination
+```
+
+を行ってください。
+
 php コンテナからのログアウトには`exit`を実行してください。<br>
 これでローカル環境の構築は終了です。お疲れ様でした。
 

@@ -14,7 +14,11 @@
     <div class="item-detail_wrapper">
         <div class="item-detail">
             <h2 class="item-name">{{ $item->name }}</h2>
-            <div class="item-brand">ブランド名</div>
+            @if(optional($item->user->shops)->first())
+            <div class="item-brand">{{ $item->user->shops->first()->name }}</div>
+            @else
+            <div class="item-brand">{{ $item->user->name }}</div>
+            @endif
             <div class="item-price">¥{{ number_format($item->price) }}(値段)</div>
             <div class="mark-container">
                 <div class="mark-wrapper">
@@ -40,6 +44,9 @@
                     <div class="mark-number">{{ $comments->count() }}</div>
                 </div>
             </div>
+            @can('admin-only')
+            <div class="purchase-number">これまでの販売数：{{ $purchases->count() }}</div>
+            @endcan
             <form class="purchase-form" action="/purchase/{{ $item->id }}" method="get">
                 @csrf
                 <input type="hidden" name="item_id" value="{{ $item->id }}">
