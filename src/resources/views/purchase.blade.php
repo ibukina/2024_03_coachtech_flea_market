@@ -28,13 +28,13 @@
             <div class="link-wrapper">
                 <div class="address-name">配送先</div>
                 <div class="shipping-address_address">
-                    @if($profile->address)
                     {{ $profile->address }}
-                    @else
-                    右の「変更する」から住所を設定してください
+                </div>
+                <div class="shipping-address_building">
+                    @if($profile->building)
+                        {{ $profile->building }}
                     @endif
                 </div>
-                <div class="shipping-address_building">{{ $profile->building }}</div>
                 <a class="address-link" href="/purchase/address/{{ $item->id }}">変更する</a>
             </div>
         </div>

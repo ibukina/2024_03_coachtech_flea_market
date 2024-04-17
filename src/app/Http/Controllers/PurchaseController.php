@@ -13,9 +13,12 @@ use App\Models\SoldItem;
 class PurchaseController extends Controller
 {
     public function index($item_id){
-        $item=Item::find($item_id);
-        $profile=Auth::user()->profile;
-        return view('purchase', compact('item', 'profile'));
+        if(Auth::user()->profile){
+            $item=Item::find($item_id);
+            $profile=Auth::user()->profile;
+            return view('purchase', compact('item', 'profile'));
+        }
+        return redirect('/mypage')->with('error', 'プロフィールで住所を設定してください');
     }
 
     public function purchase(Request $request){

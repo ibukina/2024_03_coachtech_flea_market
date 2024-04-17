@@ -5,9 +5,9 @@
 @endsection
 
 @section('main_content')
-@if(session('message'))
+@if(session('error'))
     <div class="alert">
-        {{ session('message') }}
+        {{ session('error') }}
     </div>
 @endif
 @if (count($errors) > 0)

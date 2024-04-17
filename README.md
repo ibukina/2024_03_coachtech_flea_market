@@ -337,16 +337,16 @@ php コンテナからのログアウトには`exit`を実行してください�
 
 ## テストユーザー
 
-> 一般ユーザー
-> メールアドレス：test@example.com
+> 一般ユーザー  
+> メールアドレス：test@example.com  
 > パスワード：2DDywxxwE3VM@D4
 >
-> 店舗代表者
-> merchant@example.com
+> 店舗代表者  
+> merchant@example.com  
 > 2DDywxxwE3VM@C3
 >
-> 管理者
-> admin@example.com
+> 管理者  
+> admin@example.com  
 > 2DDywxxwE3VM@B2
 
 ## シーディングについて

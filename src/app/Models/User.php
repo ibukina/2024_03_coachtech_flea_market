@@ -21,7 +21,7 @@ class User extends Authenticatable
     }
 
     public function shops(){
-        return $this->belongsToMany('App\Models\Shop');
+        return $this->hasMany('App\Models\Shop');
     }
 
     public function staffs(){
@@ -43,6 +43,12 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany('App\Models\Comment');
     }
+
+    public function hasRole($roleName)
+    {
+        return $this->role->role === $roleName;
+    }
+
 
     /**
      * The attributes that are mass assignable.
