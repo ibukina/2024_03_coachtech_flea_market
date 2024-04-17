@@ -8,6 +8,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MerchantController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,9 @@ Route::post('/login', [AuthenticatedSessionController::class, 'create']);
 Route::group(['middleware'=>['auth']], function (){
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
     Route::get('/item/comment/{item_id}', [CommentController::class, 'index'])->name('commentView');
+});
+
+Route::group(['middleware'=>['auth', 'user-only']], function(){
     Route::post('/item/comment/{item_id}', [CommentController::class, 'create']);
     Route::post('/item/comment/delete/{comment_id}/{item_id}', [CommentController::class, 'destroy']);
     Route::post('/item/like/{item_id}', [LikeController::class, 'create']);
@@ -44,4 +49,15 @@ Route::group(['middleware'=>['auth']], function (){
     Route::get('/mypage', [UserController::class, 'mypage']);
     Route::get('/mypage/profile', [UserController::class, 'profile']);
     Route::post('/mypage/profile', [UserController::class, 'updateProfile']);
+});
+
+Route::group(['middleware'=>['auth', 'can:merchant-only']], function(){
+    Route::get('/merchant', [MerchantController::class, 'index']);
+    Route::post('/merchant/invitation', [MerchantController::class, 'create']);
+    Route::post('/merchant/delete', [MerchantController::class, 'destroy']);
+});
+
+Route::group(['middleware'=>['auth', 'can:admin-only']], function(){
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::post('/admin/delete/{user_id}', [AdminController::class, 'destroy']);
 });

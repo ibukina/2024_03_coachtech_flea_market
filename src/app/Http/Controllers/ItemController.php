@@ -12,6 +12,7 @@ use App\Models\Comment;
 use App\Models\Condition;
 use App\Models\Category;
 use App\Models\CategoryItem;
+use App\Models\SoldItem;
 
 class ItemController extends Controller
 {
@@ -23,14 +24,15 @@ class ItemController extends Controller
     }
 
     public function detail($item_id){
-        $item=Item::find($item_id);
+        $item=Item::with('user.shops')->find($item_id);
         $likes=Like::where('item_id', $item_id)->get();
         $comments=Comment::where('item_id', $item_id)->get();
         $user_id=Auth::id();
         if(Auth::check()){
             $liked=Auth::user()->likes()->get();
             $liked=$liked->keyBy('item_id');
-            return view('item_detail', compact('item', 'likes', 'liked', 'comments'));
+            $purchases=SoldItem::where('item_id', $item_id)->get();
+            return view('item_detail', compact('item', 'likes', 'liked', 'comments', 'purchases'));
         }
         return view('item_detail', compact('item', 'likes', 'comments'));
     }
