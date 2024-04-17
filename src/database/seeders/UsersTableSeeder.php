@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
             [
                 'id'=>'4',
                 'role_id'=>'10',
-                'name'=>'出品者',
+                'name'=>'利用者',
                 'email'=>'test2@example.com',
                 'password'=>Hash::make('2DDywxxwE3VM@D1'),
             ],

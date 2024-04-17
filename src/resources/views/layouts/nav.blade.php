@@ -31,8 +31,16 @@
                     @csrf
                     <button class="menu-nav_link logout-form_button">ログアウト</button>
                 </form>
+                @can('user-only')
                 <a href="/mypage" class="menu-nav_link">マイページ</a>
                 <a href="/sell" class="menu-nav_link menu-nav_link-sell">出品</a>
+                @endcan
+                @can('merchant-only')
+                <a href="/merchant" class="menu-nav_link">ショップスタッフ管理</a>
+                @endcan
+                @can('admin-only')
+                <a href="/admin" class="menu-nav_link">管理画面</a>
+                @endcan
             </nav>
             @else
             <nav class="menu-nav">

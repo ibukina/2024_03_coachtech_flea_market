@@ -56,6 +56,7 @@
             </div>
         </div>
         @livewire('comment-select', ['comments'=>$comments, 'item'=>$item])
+        @can('user-only')
         <form class="comment-form" action="/item/comment/{{ $item->id }}" method="post">
             @csrf
             <label class="comment-form_item-wrapper">
@@ -64,6 +65,7 @@
             </label>
             <button class="comment-form_button">コメントを送信する</button>
         </form>
+        @endcan
     </div>
 </div>
 @endsection

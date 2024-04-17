@@ -5,6 +5,11 @@
 @endsection
 
 @section('main_content')
+@if(session('error'))
+    <div class="alert">
+        {{ session('error') }}
+    </div>
+@endif
 <div class="content-mypage">
     <div class="user-info_wrapper">
         <div class="user-info">

@@ -28,7 +28,7 @@ class UserController extends Controller
 
     public function updateProfile(ProfileRequest $request){
         $user_id=Auth::id();
-        $read_path='storage/image/default.png';
+        $read_path='img/default.png';
         if($request->hasFile('img_url')){
             $image_file=$request->file('img_url');
             $filename=$image_file->getClientOriginalName();
