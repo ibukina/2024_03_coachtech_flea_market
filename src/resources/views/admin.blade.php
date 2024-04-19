@@ -29,16 +29,26 @@
     <div class="shop-container">
         <div class="shop-title">ショップ一覧</div>
         <div class="shop-wrapper">
-            <div class="sell-wrapper">
-                <div class="detail-form_wrapper">
-                    <form class="detail-form" action="/item/item->id" method="get">
+            @if($shops)
+            @foreach($shops as $shop)
+            <div class="shop-item_wrapper">
+                <div class="shop-name">店舗名：{{ $shop->name }}</div>
+                <div class="merchant-name">店舗管理者：{{ $shop->user->name }}</div>
+                @foreach($shop->user->items as $item)
+                <div class="shop-item_detail">
+                    <img class="item-image" src="{{ asset($item->img_url) }}" alt="">
+                    <div class="item-name">{{ $item->name }}</div>
+                    <form class="detail-form" action="/item/{{ $item->id }}" method="get">
                         @csrf
-                        <img class="detail-form_image" src="" alt="">
-                        <button class="detail-form_button"></button>
+                        <button class="detail-form_button">商品詳細へ</button>
                     </form>
                 </div>
+                @endforeach
             </div>
+            @endforeach
+            @endif
         </div>
+        {{ $shops->links('vendor.pagination.bootstrap-4') }}
     </div>
 </div>
 @endsection

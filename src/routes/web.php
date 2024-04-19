@@ -54,7 +54,7 @@ Route::group(['middleware'=>['auth', 'user-only']], function(){
 Route::group(['middleware'=>['auth', 'can:merchant-only']], function(){
     Route::get('/merchant', [MerchantController::class, 'index']);
     Route::post('/merchant/invitation', [MerchantController::class, 'create']);
-    Route::post('/merchant/delete', [MerchantController::class, 'destroy']);
+    Route::post('/merchant/delete/{staff_id}', [MerchantController::class, 'destroy']);
 });
 
 Route::group(['middleware'=>['auth', 'can:admin-only']], function(){
