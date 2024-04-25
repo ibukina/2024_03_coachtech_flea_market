@@ -10,6 +10,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +61,6 @@ Route::group(['middleware'=>['auth', 'can:merchant-only']], function(){
 Route::group(['middleware'=>['auth', 'can:admin-only']], function(){
     Route::get('/admin', [AdminController::class, 'index']);
     Route::post('/admin/delete/{user_id}', [AdminController::class, 'destroy']);
+    Route::post('/mail/confirm', [MailController::class, 'confirm']);
+    Route::post('/mail/send', [MailController::class, 'send']);
 });

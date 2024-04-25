@@ -15,7 +15,7 @@
 <body>
     <header class="app-header">
         <div class="header-logo">
-            <a href="/"><img class="header-logo_image" src="{{ asset('img/logo.png') }}" alt="画像"></a>
+            <a class="header-logo_link" href="/"><img class="header-logo_image" src="{{ asset('img/logo.png') }}" alt="画像"></a>
         </div>
     </header>
     <main class="app-main">

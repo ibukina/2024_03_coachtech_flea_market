@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px;
+    width: 100%;
     height: 400px;
     background-color: #D9D9D9;
     font-size: 30px;
@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 320px;
+    width: 100%;
 }
 
 .item-name{
@@ -75,7 +75,7 @@
     background-size: cover;
 }
 
-.comment-form{
+.comment-form_link{
     width: 22px;
     height: 22px;
     background-image: url(../img/comment.png);
@@ -102,7 +102,7 @@
 
 .purchase-button{
     width: 100%;
-    height: 36px;
+    padding: 5px 0;
     border: none;
     border-radius: 3px;
     background-color: #FF5555;
@@ -159,4 +159,74 @@
     text-align: center;
     height: 18px;
     margin: 0 10px;
+}
+
+@media screen and (max-width:768px) {
+    .content-detail{
+        padding: 50px 8%;
+    }
+
+    .item-image{
+        width: 240px;
+        height: 320px;
+    }
+
+    .item-detail_wrapper{
+        width: 280px;
+    }
+
+    .category-title, .condition-title{
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .item-image_wrapper{
+        width: 450px;
+    }
+
+    .item-image{
+        height: 570px;
+    }
+
+    .item-detail_wrapper{
+        width: 450px;
+    }
+
+    .item-name{
+        font-size: 38px;
+    }
+
+    .item-brand{
+        font-size: 17px;
+    }
+
+    .item-price{
+        font-size: 27px;
+    }
+
+    .like-form, .comment-form_link{
+        width: 30px;
+        height: 30px;
+    }
+
+    .mark-number{
+        font-size: 15px;
+    }
+
+    .purchase-button{
+        font-size: 22px;
+    }
+
+    .description-title, .information-title{
+        font-size: 27px;
+    }
+
+    .item-color, .item-description, .category-tag, .condition-tag{
+        font-size: 18px;
+    }
+
+    .category-title, .condition-title{
+        font-size: 20px;
+    }
 }

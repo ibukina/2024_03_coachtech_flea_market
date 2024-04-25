@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Staff extends Model
 {
     use HasFactory;
+    protected $table = 'staffs';
 
     public function user(){
         return $this->belongsTo('App\Models\User');

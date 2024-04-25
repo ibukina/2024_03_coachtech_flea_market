@@ -13,13 +13,19 @@ class ShopsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $shops=[
-            [
-                'id'=>'1',
-                'user_id'=>'2',
-                'name'=>'ブランド名',
-            ],
-        ];
-        DB::table('shops')->insert($shops);
+        if(app()->environment('local')){
+            $shops=[
+                [
+                    'id'=>'1',
+                    'user_id'=>'2',
+                    'name'=>'ブランド名',
+                    'area'=>'東京都',
+                    'genre'=>'モダン',
+                    'description'=>'モダンな洋服を取り揃えています',
+                    'img_url'=>'img/default.png',
+                ],
+            ];
+            DB::table('shops')->insert($shops);
+        }
     }
 }

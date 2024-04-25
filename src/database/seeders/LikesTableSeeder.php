@@ -13,20 +13,22 @@ class LikesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $likes=[
-            [
-                'user_id'=>'2',
-                'item_id'=>'1',
-            ],
-            [
-                'user_id'=>'3',
-                'item_id'=>'1',
-            ],
-            [
-                'user_id'=>'4',
-                'item_id'=>'1',
-            ],
-        ];
-        DB::table('likes')->insert($likes);
+        if(app()->environment('local')){
+            $likes=[
+                [
+                    'user_id'=>'4',
+                    'item_id'=>'1',
+                ],
+                [
+                    'user_id'=>'5',
+                    'item_id'=>'1',
+                ],
+                [
+                    'user_id'=>'6',
+                    'item_id'=>'1',
+                ],
+            ];
+            DB::table('likes')->insert($likes);
+        }
     }
 }

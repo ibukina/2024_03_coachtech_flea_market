@@ -13,6 +13,14 @@ class SoldItemTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        if(app()->environment('local')){
+            $soldItems=[
+                [
+                    'user_id'=>'3',
+                    'item_id'=>'1',
+                ],
+            ];
+            DB::table('sold_item')->insert($soldItems);
+        }
     }
 }
