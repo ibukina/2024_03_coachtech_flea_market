@@ -36,7 +36,7 @@
                     <div class="mark-number">{{ $likes->count() }}</div>
                 </div>
                 <div class="mark-wrapper">
-                    <form class="comment-form" action="/item/comment/{{ $item->id }}" method="get">
+                    <form class="comment-form_link" action="/item/comment/{{ $item->id }}" method="get">
                         @csrf
                         <input type="hidden" name="item_id" value="{{ $item->id }}">
                         <button class="comment-button"></button>

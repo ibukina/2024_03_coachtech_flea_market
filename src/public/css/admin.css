@@ -2,7 +2,7 @@
     font-size: 15px;
 }
 
-.user-container, .shop-container{
+.mail-container, .user-container, .shop-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,9 +10,46 @@
     margin: 40px auto;
 }
 
-.user-title, .shop-title{
+.user-container, .shop-container{
+    padding-top: 30px;
+    border-top: 15px dotted skyblue;
+}
+
+.mail-title, .user-title, .shop-title{
     font-size: 24px;
     font-weight: 600;
+}
+
+.mail-form{
+    width: 50%;
+}
+
+.mail-form_item{
+    width: 100%;
+    margin: 10px;
+}
+
+.mail-form_item-name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mail-form_title, .mail-form_email, .mail-form_text, .mail-form_item-button{
+    width: 100%;
+    height: 40px;
+    padding: 2px;
+    font-size: 17px;
+}
+
+.mail-form_text{
+    height: 100px;
+}
+
+.mail-form_item-button{
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0073CC;
 }
 
 .user-table{
@@ -61,4 +98,8 @@
     border: none;
     background: none;
     color: #0073CC;
+}
+
+.back-link{
+    text-decoration: none;
 }

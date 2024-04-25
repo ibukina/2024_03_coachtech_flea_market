@@ -40,7 +40,7 @@
 
 ### コメントページ
 
-![flea_market_comment](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/539a2b21-ec4c-4bc8-9525-a39fcd494778)
+![flea_market_comment](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/93dd773d-0457-4f77-b8f5-37b40b796b7e)
 
 ### 購入ページ
 
@@ -60,35 +60,72 @@
 
 </details>
 
+<details>
+<summary>店舗代表者ページ一覧</summary>
+
+### 店舗代表者ページ
+
+![flea_market_merchant](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/6690bccd-73c9-4c3c-8183-2be756adb7d4)
+
+</details>
+
+<details>
+<summary>管理者ページ一覧</summary>
+
+### 管理者ページ
+
+![flea_market_admin](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/ddc058f5-93c7-4c38-9ae6-e8a2aaa3f7aa)
+
+### メール送信内容確認ページ
+
+![flea_market_mail](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/5f9f7e12-25bb-44fd-a5dd-4eda8144080a)
+
+</details>
+
 ## 作成した目的
+
+ある企業が開発した独自のフリマアプリです。
+自社ブランドのアイテムを出品する目的で作成されました。
 
 ## アプリケーション url
 
-ログインなしで閲覧可能なページ
+#### ログインなしで閲覧可能なページ
 
 - 会員登録ページ
-  http://localhost/register
+  /register
 - ログインページ
-  http://localhost/login
+  /login
 - 商品一覧ページ
-  http://localhost/
+  /
 - 商品詳細ページ
-  http://localhost/item/:item_id
+  /item/:item_id
 
-ログインが必要なページ
+#### ログインが必要なページ
 
 - 出品ページ
-  http://localhost/sell
+  /sell
 - コメントページ
-  http://localhost/comment/:item_id
+  /comment/:item_id
 - 購入ページ
-  http://localhost/purchase/:item_id
+  /purchase/:item_id
 - 住所変更ページ
-  http://localhost/purchase/address/:item_id
+  /purchase/address/:item_id
 - マイページ
-  http://localhost/mypage
+  /mypage
 - プロフィール編集ページ
-  http://localhost/mypage/profile
+  /mypage/profile
+
+#### 店舗代表者のみ閲覧可能なページ
+
+- 店舗代表者ページ
+  /merchant
+
+#### 管理者のみ閲覧可能なページ
+
+- 管理者ページ
+  /admin
+- メール送信内容確認ページ
+  /mail/confirm
 
 ## 機能一覧
 
@@ -109,6 +146,11 @@
 - 出品
 - 購入
 - 配送先変更
+- ショップスタッフ追加
+- ショップスタッフ削除
+- ユーザー削除
+- ショップとユーザーのやり取り確認
+- 管理者からユーザーへメール送信
 
 ## 使用技術(実行環境)
 
@@ -133,8 +175,10 @@
   ![flea_market_table_profiles](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/82ef3c25-6fbe-4106-9264-f6ce8aea1ebe)
 
 - ShopsTable
+  ![flea_market_table_shops](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/4502a2ae-eb88-48ef-9dd8-78a513704acb)
 
 - StaffsTable
+  ![flea_market_table_staffs](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/24555cc6-4dd0-47ba-abb1-eb68c6172f0c)
 
 - ConditionsTable
   ![flea_market_table_conditions](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/1987bcf1-f18e-41c9-ac7a-8b4b9680f2cc)
@@ -161,7 +205,7 @@
 
 ## ER 図
 
-![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/badbe4c2-0404-4107-ac3c-a9efbbbb4554)
+![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/a0d3a162-3dda-4652-a333-2a7d36260254)
 
 ## 環境構築
 

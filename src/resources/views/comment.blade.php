@@ -24,7 +24,11 @@
     <div class="item-comment_wrapper">
         <div class="item-wrapper">
             <h2 class="item-name">{{ $item->name }}</h2>
-            <div class="item-brand">ブランド名</div>
+            @if(optional($item->user->shops)->first())
+            <div class="item-brand">{{ $item->user->shops->first()->name }}</div>
+            @else
+            <div class="item-brand">{{ $item->user->name }}</div>
+            @endif
             <div class="item-price">¥{{ $item->price }}(値段)</div>
             <div class="mark-container">
                 <div class="mark-wrapper">
