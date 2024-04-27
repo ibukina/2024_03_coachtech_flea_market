@@ -33,6 +33,6 @@ class MerchantController extends Controller
 
     public function destroy($staff_id){
         Staff::find($staff_id)->delete();
-        return redirect('merchant');
+        return redirect('/merchant');
     }
 }

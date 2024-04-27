@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function index(){
         $users=User::where('role_id', "10")->paginate(10);
-        $shops=Shop::with('user.staffs.items')->paginate(5);
+        $shops=Shop::with('user.staffs.items')->get();
         return view('admin', compact('users', 'shops'));
     }
 
