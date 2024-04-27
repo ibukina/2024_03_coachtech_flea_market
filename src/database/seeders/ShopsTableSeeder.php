@@ -22,7 +22,7 @@ class ShopsTableSeeder extends Seeder
                     'area'=>'東京都',
                     'genre'=>'モダン',
                     'description'=>'モダンな洋服を取り揃えています',
-                    'img_url'=>'img/default.png',
+                    'img_url'=>'img/default.svg',
                 ],
             ];
             DB::table('shops')->insert($shops);

@@ -64,21 +64,21 @@
 .like-form {
     width: 22px;
     height: 22px;
-    background-image: url(../img/like.png);
+    background-image: url(../img/like.svg);
     background-size: cover;
 }
 
 .unlike-form {
     width: 22px;
     height: 22px;
-    background-image: url(../img/liked.png);
+    background-image: url(../img/liked.svg);
     background-size: cover;
 }
 
 .comment-form_link {
     width: 22px;
     height: 22px;
-    background-image: url(../img/comment.png);
+    background-image: url(../img/comment.svg);
     background-size: cover;
 }
 
