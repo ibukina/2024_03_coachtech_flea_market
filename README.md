@@ -219,7 +219,7 @@
 
 ## ER 図
 
-![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/a0d3a162-3dda-4652-a333-2a7d36260254)
+![flea_market drawio](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/4b3338ba-37f8-4fc3-b5e6-6ef36566c19c)
 
 ## 環境構築
 
