@@ -34,7 +34,7 @@
 
 ![flea_market_item_detail_logined](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/db529c78-f935-4a4b-9962-948e5a7241c0)
 
-### 出品ページ
+### 商品販売用フォームページ
 
 ![flea_market_sell](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/be18034e-724f-4b24-b2cc-61cac4927f55)
 
@@ -65,7 +65,11 @@
 
 ### 店舗代表者ページ
 
-![flea_market_merchant](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/6690bccd-73c9-4c3c-8183-2be756adb7d4)
+![flea_market_merchant](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/5909e493-2dd7-47bd-b378-2864f3d596a1)
+
+### 出店用フォームページ
+
+![flea_market_shop](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/41d2de17-201c-4410-8047-6ad86a0c07dc)
 
 </details>
 
@@ -74,7 +78,11 @@
 
 ### 管理者ページ
 
-![flea_market_admin](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/ddc058f5-93c7-4c38-9ae6-e8a2aaa3f7aa)
+![flea_market_admin](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/98616fa2-bf1b-45e9-982b-1f9c32634c41)
+
+### 店舗代表者追加ページ
+
+![flea_market_merchant_register](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/b1196351-759e-4e6d-bde3-68604aac4d8c)
 
 ### メール送信内容確認ページ
 
@@ -174,8 +182,14 @@
 - ProfilesTable
   ![flea_market_table_profiles](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/82ef3c25-6fbe-4106-9264-f6ce8aea1ebe)
 
+- AreasTable
+  ![flea_market_table_areas](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/fe6c0f18-04cd-4313-baa1-4f9464804364)
+
+- GenresTable
+  ![flea_market_table_genres](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/78ced036-2a76-4dce-9702-29163c2c395c)
+
 - ShopsTable
-  ![flea_market_table_shops](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/4502a2ae-eb88-48ef-9dd8-78a513704acb)
+  ![flea_market_table_shops](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/f8ed80ed-9fc1-4c08-837e-e9b3c5dde5c7)
 
 - StaffsTable
   ![flea_market_table_staffs](https://github.com/ibukina/2024_03_coachtech_flea_market/assets/142294463/24555cc6-4dd0-47ba-abb1-eb68c6172f0c)

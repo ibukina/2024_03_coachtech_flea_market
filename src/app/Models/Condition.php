@@ -14,6 +14,6 @@ class Condition extends Model
     }
 
     protected $fillable=[
-        'name',
+        'condition',
     ];
 }

@@ -7,12 +7,42 @@
     flex-direction: column;
     align-items: center;
     width: 90%;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 .shop-name, .merchant-name{
     display: flex;
     justify-content: center;
+}
+
+select {
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.invite-form_wrapper{
+    margin-bottom: 25px;
+}
+
+.user-invite_form{
+    font-size: 18px;
+}
+
+.invite-form_select{
+    height: 30px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.user-invite_button {
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FF5555;
+    color: white;
 }
 
 .user-table {
@@ -22,13 +52,6 @@
 
 .table-row {
     border-bottom: 1px solid #5F5F5F;
-}
-
-.user-invite_button {
-    border: none;
-    border-radius: 4px;
-    background-color: #FF5555;
-    color: white;
 }
 
 .user-delete_button {

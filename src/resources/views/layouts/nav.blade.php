@@ -36,9 +36,11 @@
                 <a href="/sell" class="menu-nav_link menu-nav_link-sell">出品</a>
                 @endcan
                 @can('merchant-only')
-                <a href="/merchant" class="menu-nav_link">ショップスタッフ管理</a>
+                <a href="/merchant" class="menu-nav_link">スタッフ管理</a>
+                <a href="/merchant/shop" class="menu-nav_link menu-nav_link-shop">出店</a>
                 @endcan
                 @can('admin-only')
+                <a href="/register" class="menu-nav_link">店舗代表者登録</a>
                 <a href="/admin" class="menu-nav_link">管理画面</a>
                 @endcan
             </nav>
