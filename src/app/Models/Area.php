@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Area extends Model
 {
     use HasFactory;
 
-    public function category_items(){
-        return $this->belongsToMany('App\Models\Item');
+    public function shops(){
+        return $this->hasMany('App\Models\Shop');
     }
 
     protected $fillable=[
-        'category'
+        'area'
     ];
 }

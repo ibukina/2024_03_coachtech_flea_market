@@ -5,20 +5,54 @@
 @endsection
 
 @section('main_content')
+@if(session('message'))
+    <div class="message">
+        {{ session('message') }}
+    </div>
+@endif
 <div class="content-merchant">
-    @foreach($shops as $shop)
-    <h1 class="shop-name">店舗名：{{ $shop->name }}</h1>
-    <h3 class="merchant-name">店舗代表者：{{ $merchant->name }}</h3>
-    @endforeach
+    <h2 class="merchant-name">店舗代表者：{{ $merchant->name }}</h2>
     <div class="invitation-wrapper">
-        <h4>スタッフ一覧</h4>
+        <h4>招待フォーム</h4>
+        <div class="invite-form_wrapper">
+            <form class="user-invite_form" action="/merchant/invitation" method="post">
+                @csrf
+                <select class="invite-form_select" name="shop_id">
+                    <option value="">店舗選択</option>
+                    @if($shops)
+                    @foreach($shops as $shop)
+                    <option value="{{ $shop->id }}">{{ $shop->name }}</option>
+                    @endforeach
+                    @endif
+                </select>
+                <select class="invite-form_select" name="user_id">
+                    <option value="">ユーザー選択</option>
+                    @if($users)
+                    @foreach($users as $user)
+                    @if(!$staffs->contains($user->id))
+                    <option value="{{ $user->id }}">{{ $user->name . "/" . $user->email }}</option>
+                    @endif
+                    @endforeach
+                    @endif
+                </select>
+                <button class="user-invite_button">招待</button>
+            </form>
+            @error('shop_id')
+            <p>{{ $message }}</p>
+            @enderror
+            @error('user_id')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+        @foreach($shops as $shop)
+        <h4>{{ $shop->name }}スタッフ一覧</h4>
         <table class="user-table">
-            @if($staffs->isEmpty())
+            @if($shop->staffs->isEmpty())
             <tr class="table-row">
                 <td class="user-non">現在ショップスタッフはいません</td>
             </tr>
             @else
-            @foreach($staffs as $staff)
+            @foreach($shop->staffs as $staff)
             <tr class="table-row">
                 <td class="user-name">{{ $staff->user->name }}</td>
                 <td class="user-email">{{ $staff->user->email }}</td>
@@ -33,31 +67,7 @@
             @endforeach
             @endif
         </table>
-        <h4>ユーザー一覧</h4>
-        <table class="user-table">
-            @if($users)
-            @foreach($users as $user)
-            @if(!$staffs->pluck('user.id')->contains($user->id))
-            <tr class="table-row">
-                <td class="user-name">{{ $user->name }}</td>
-                <td class="user-email">{{ $user->email }}</td>
-                <td class="table-data_form">
-                    <form class="user-invite_form" action="/merchant/invitation" method="post">
-                        @csrf
-                        <input type="hidden" name="user_id" value="{{ $user->id }}">
-                        @foreach($shops as $shop)
-                        <input type="hidden" name="role_id" value="{{ $user->role->id }}">
-                        <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                        @endforeach
-                        <button class="user-invite_button">招待</button>
-                    </form>
-                </td>
-            </tr>
-            @endif
-            @endforeach
-            @endif
-        </table>
-        {{ $users->links('vendor.pagination.bootstrap-4') }}
+        @endforeach
     </div>
 </div>
 @endsection

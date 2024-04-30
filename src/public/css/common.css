@@ -65,7 +65,7 @@
     color: white;
 }
 
-.menu-nav_link-sell{
+.menu-nav_link-sell, .menu-nav_link-shop{
     padding: 5px 15px;
     border-radius: 3px;
     background-color: white;

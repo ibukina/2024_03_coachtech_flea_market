@@ -14,7 +14,7 @@ class RegisteredUserController extends Controller
     }
 
     public function create(RegisterRequest $request){
-        $user=User::create([
+        User::create([
             'role_id' => '10',
             'name' => $request['name'],
             'email' => $request['email'],

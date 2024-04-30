@@ -19,9 +19,9 @@ class ShopsTableSeeder extends Seeder
                     'id'=>'1',
                     'user_id'=>'2',
                     'name'=>'ブランド名',
-                    'area'=>'東京都',
-                    'genre'=>'モダン',
-                    'description'=>'モダンな洋服を取り揃えています',
+                    'area_id'=>'13',
+                    'genre_id'=>'1',
+                    'summary'=>'カジュアルな洋服を取り揃えています',
                     'img_url'=>'img/default.svg',
                 ],
             ];

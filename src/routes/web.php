@@ -56,10 +56,13 @@ Route::group(['middleware'=>['auth', 'can:merchant-only']], function(){
     Route::get('/merchant', [MerchantController::class, 'index']);
     Route::post('/merchant/invitation', [MerchantController::class, 'create']);
     Route::post('/merchant/delete/{staff_id}', [MerchantController::class, 'destroy']);
+    Route::get('/merchant/shop', [MerchantController::class, 'shopView']);
+    Route::post('/merchant/shop', [MerchantController::class, 'shopCreate']);
 });
 
 Route::group(['middleware'=>['auth', 'can:admin-only']], function(){
     Route::get('/admin', [AdminController::class, 'index']);
+    Route::post('/admin/merchant', [AdminController::class, 'create']);
     Route::post('/admin/delete/{user_id}', [AdminController::class, 'destroy']);
     Route::post('/mail/confirm', [MailController::class, 'confirm']);
     Route::post('/mail/send', [MailController::class, 'send']);

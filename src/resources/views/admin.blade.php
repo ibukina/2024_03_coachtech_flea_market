@@ -60,7 +60,7 @@
             @endforeach
             @endif
         </table>
-        {{ $users->links('vendor.pagination.bootstrap-4') }}
+        {{ $users->appends(['shopsPage' => request('shopsPage')])->links('vendor.pagination.bootstrap-4') }}
     </div>
     <div class="shop-container">
         <div class="shop-title">ショップ一覧</div>
@@ -90,6 +90,7 @@
             </div>
             @endforeach
             @endif
+            {{ $shops->appends(['usersPage' => request('usersPage')])->links('vendor.pagination.bootstrap-4') }}
             <p class="item-alert">※一般ユーザーが出品したものにつきましてはホーム画面からお探しください。</p>
         </div>
     </div>
