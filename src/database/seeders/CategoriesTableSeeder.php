@@ -15,15 +15,19 @@ class CategoriesTableSeeder extends Seeder
     {
         $categories=[
             [
+                'id'=>'1',
                 'category'=>'洋服',
             ],
             [
+                'id'=>'2',
                 'category'=>'メンズ',
             ],
             [
+                'id'=>'3',
                 'category'=>'アクセサリー',
             ],
             [
+                'id'=>'4',
                 'category'=>'小物',
             ],
         ];

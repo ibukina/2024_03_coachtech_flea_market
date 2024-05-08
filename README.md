@@ -227,6 +227,8 @@
 > これは Windows での構築方法です。
 > 他 OS の場合は異なる場合がございます。<br>
 
+#### ローカルでの環境構築
+
 - プロジェクトのクローン<br>
   まず、コマンドライン上でアプリケーションを導入したいディレクトリまで移動してください。
   移動出来たら、
@@ -393,6 +395,66 @@ php artisan db:seed
 php コンテナからのログアウトには`exit`を実行してください。<br>
 これでローカル環境の構築は終了です。お疲れ様でした。
 
+#### テストについて
+
+このアプリケーションでは、PHPUnit を利用してテストを行います。
+
+- テストの準備
+
+まずテスト用のデータベースを作成します。
+データベースの作成には root ユーザーを利用してください。
+root ユーザーでの入り方です。
+
+```mysqlコンテナ
+mysql -u root -p
+```
+
+この時のパスワードは docker-compose.yml の MYSQL_ROOT_PASSWORD の root を入力してください。
+ログインできましたら下記のコマンドを実行してください。
+
+```mysqlコンテナ
+CREATE DATABASE laravel_test_db;
+```
+
+次に laravel_user にテスト用データベースへのアクセス権を与えるため下記のコマンドを実行してください。
+※一行目で laravel_user に laravel_test_db に対する全ての権限を付与、二行目で権限の変更を即時に反映しています。
+
+```mysqlコンテナ
+GRANT ALL PRIVILEGES ON laravel_test_db.* TO 'laravel_user'@'%';
+FLUSH PRIVILEGES;
+```
+
+テストを行う際、既存の.env ファイルを参考にしてしまうとデータベースの内容が消えてしまいますので、新しくテスト用の.env.testing を作成します。
+下記のコマンドは php コンテナにログインするか/src に移動して実行してください。
+
+```ターミナル
+cp .env .env.testing
+```
+
+.env.testing が作成できましたら、データベースの欄を変更します。
+下記の二つを変更してください。
+
+```.env.testing
+APP_ENV=testing
+DB_DATABASE=laravel_test_db
+```
+
+テストを実行する前に、テスト用データベースにテーブルを作成します。
+
+```phpコンテナ
+php artisan migrate --env=testing
+```
+
+#### テストの実行
+
+テストの実行は php コンテナで下記のコマンドを実行してください。
+
+```phpコンテナ
+php artisan test
+```
+
+テストの結果はターミナルに表示されます。
+
 ## テストユーザー
 
 > 一般ユーザー  
@@ -418,4 +480,5 @@ php artisan migrate:refresh --seed
 
 を行い、変更を反映させてください。
 
-> [!IMPORTANT] > `php artisan migrate:refresh`を行うとデータベースの内容もリセットされるため注意してください。
+> [!IMPORTANT]  
+> `php artisan migrate:refresh`を行うとデータベースの内容もリセットされるため注意してください。

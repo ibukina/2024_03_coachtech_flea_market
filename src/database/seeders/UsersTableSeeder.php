@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             'password'=>Hash::make('2DDywxxwE3VM@B2'),
         ]);
 
-        if(app()->environment('local')){
+        if(app()->environment('local') || app()->environment('testing')){
             $users=[
                 [
                     'id'=>'2',

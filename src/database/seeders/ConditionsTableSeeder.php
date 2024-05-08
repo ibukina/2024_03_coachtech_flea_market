@@ -15,12 +15,15 @@ class ConditionsTableSeeder extends Seeder
     {
         $conditions=[
             [
+                'id'=>'1',
                 'condition'=>'良好',
             ],
             [
+                'id'=>'2',
                 'condition'=>'普通',
             ],
             [
+                'id'=>'3',
                 'condition'=>'不良',
             ],
         ];
