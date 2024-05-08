@@ -13,15 +13,18 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $profiles=[
-            [
-                'user_id'=>'3',
-                'img_url'=>'img/default.svg',
-                'postcode'=>'1600022',
-                'address'=>'東京都新宿区',
-                'building'=>'',
-            ],
-        ];
-        DB::table('profiles')->insert($profiles);
+        if(app()->environment('local') || app()->environment('testing')){
+            $profiles=[
+                [
+                    'id'=>'1',
+                    'user_id'=>'3',
+                    'img_url'=>'img/default.svg',
+                    'postcode'=>'1600022',
+                    'address'=>'東京都新宿区',
+                    'building'=>'',
+                ],
+            ];
+            DB::table('profiles')->insert($profiles);
+        }
     }
 }

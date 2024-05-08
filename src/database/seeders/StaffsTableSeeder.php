@@ -13,13 +13,15 @@ class StaffsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        if(app()->environment('local')){
+        if(app()->environment('local') || app()->environment('testing')){
             $staffs=[
                 [
+                    'id'=>'1',
                     'user_id'=>'6',
                     'shop_id'=>'1',
                 ],
                 [
+                    'id'=>'2',
                     'user_id'=>'7',
                     'shop_id'=>'1',
                 ]
