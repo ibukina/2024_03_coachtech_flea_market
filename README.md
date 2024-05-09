@@ -445,7 +445,7 @@ DB_DATABASE=laravel_test_db
 php artisan migrate --env=testing
 ```
 
-#### テストの実行
+- テストの実行
 
 テストの実行は php コンテナで下記のコマンドを実行してください。
 
