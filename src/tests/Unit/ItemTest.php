@@ -35,8 +35,12 @@ class ItemTest extends TestCase
         $this->assertTrue($item->condition->condition === '良好');
     }
 
-    public function testItemBelongsToManyCategories()
+    public function testKeywordSearch()
     {
-        
+        $item = Item::find(1);
+
+        $items = Item::KeywordSearch('商品')->get();
+
+        $this->assertTrue($items->contains($item));
     }
 }

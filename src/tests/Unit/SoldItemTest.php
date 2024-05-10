@@ -25,13 +25,13 @@ class SoldItemTest extends TestCase
     {
         $soldItem = SoldItem::find(1);
 
-        $this->assertTrue($solItem->user->name === 'ユーザー名');
+        $this->assertTrue($soldItem->user->name === 'ユーザー名');
     }
 
     public function testSoldItemBelongsToItem()
     {
         $soldItem = SoldItem::find(1);
 
-        $this->assertTrue($solItem->item->name === '商品名');
+        $this->assertTrue($soldItem->item->name === '商品名');
     }
 }
